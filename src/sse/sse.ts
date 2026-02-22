@@ -1,7 +1,7 @@
 /** Configuration for an SSE connection. */
 export interface SSEConfig {
-  /** URL path for the SSE endpoint. */
-  url: string;
+  /** URL path for the SSE endpoint. Default: '/events' */
+  url?: string;
   /** Include auth token as query parameter. Default: true */
   withAuth?: boolean;
   /** Token key in localStorage. Default: 'auth_token' */
@@ -24,7 +24,7 @@ export interface SSEConfig {
  * // Later: es.close();
  */
 export function connectSSE(config: SSEConfig): EventSource {
-  const { url, withAuth = true, tokenKey = 'auth_token', onEvent, onError } = config;
+  const { url = '/events', withAuth = true, tokenKey = 'auth_token', onEvent, onError } = config;
 
   let fullUrl = url;
   if (withAuth) {
