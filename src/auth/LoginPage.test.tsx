@@ -27,7 +27,7 @@ describe('LoginPage', () => {
     expect(screen.getByText('Email')).toBeInTheDocument();
   });
 
-  it('displays error message', () => {
+  it('displays error message with alert role', () => {
     render(
       <LoginPage
         title="App"
@@ -35,7 +35,9 @@ describe('LoginPage', () => {
         onLogin={vi.fn()}
       />,
     );
-    expect(screen.getByText('Invalid credentials')).toBeInTheDocument();
+    const alert = screen.getByRole('alert');
+    expect(alert).toHaveTextContent('Invalid credentials');
+    expect(alert).toHaveAttribute('aria-live', 'assertive');
   });
 
   it('calls onLogin with username and password', async () => {
@@ -44,8 +46,8 @@ describe('LoginPage', () => {
 
     render(<LoginPage title="App" onLogin={onLogin} />);
 
-    await user.type(screen.getByPlaceholderText('admin'), 'testuser');
-    await user.type(screen.getByPlaceholderText('••••••••'), 'testpass');
+    await user.type(screen.getByLabelText('Username'), 'testuser');
+    await user.type(screen.getByLabelText('Password'), 'testpass');
     await user.click(screen.getByRole('button', { name: 'Sign In' }));
 
     expect(onLogin).toHaveBeenCalledWith('testuser', 'testpass');
@@ -61,11 +63,34 @@ describe('LoginPage', () => {
 
     render(<LoginPage title="App" onLogin={onLogin} />);
 
-    await user.type(screen.getByPlaceholderText('admin'), 'u');
-    await user.type(screen.getByPlaceholderText('••••••••'), 'p');
+    await user.type(screen.getByLabelText('Username'), 'u');
+    await user.type(screen.getByLabelText('Password'), 'p');
     await user.click(screen.getByRole('button', { name: 'Sign In' }));
 
     expect(screen.getByText('Signing in...')).toBeInTheDocument();
+    expect(screen.getByRole('button')).toHaveAttribute('aria-busy', 'true');
     resolveLogin!();
+  });
+
+  it('uses semantic main element', () => {
+    render(<LoginPage title="App" onLogin={vi.fn()} />);
+    expect(screen.getByRole('main')).toBeInTheDocument();
+  });
+
+  it('has accessible form with aria-label', () => {
+    render(<LoginPage title="App" onLogin={vi.fn()} />);
+    expect(screen.getByRole('form', { name: 'Sign in' })).toBeInTheDocument();
+  });
+
+  it('labels are associated with inputs via htmlFor', () => {
+    render(<LoginPage title="App" onLogin={vi.fn()} />);
+    expect(screen.getByLabelText('Username')).toBeInTheDocument();
+    expect(screen.getByLabelText('Password')).toBeInTheDocument();
+  });
+
+  it('inputs have aria-required', () => {
+    render(<LoginPage title="App" onLogin={vi.fn()} />);
+    expect(screen.getByLabelText('Username')).toHaveAttribute('aria-required', 'true');
+    expect(screen.getByLabelText('Password')).toHaveAttribute('aria-required', 'true');
   });
 });

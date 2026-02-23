@@ -45,7 +45,7 @@ export default function LoginPage({
   }
 
   return (
-    <div
+    <main
       style={{
         ...baseStyles.container,
         display: 'flex',
@@ -84,6 +84,8 @@ export default function LoginPage({
 
         {error && (
           <div
+            role="alert"
+            aria-live="assertive"
             style={{
               backgroundColor: `${colors.red}22`,
               border: `1px solid ${colors.red}`,
@@ -98,9 +100,10 @@ export default function LoginPage({
           </div>
         )}
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} aria-label="Sign in">
           <div style={{ marginBottom: '16px' }}>
             <label
+              htmlFor="login-username"
               style={{
                 display: 'block',
                 color: colors.subtext1,
@@ -112,18 +115,21 @@ export default function LoginPage({
               {usernameLabel}
             </label>
             <input
+              id="login-username"
               type={usernameType}
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder={usernamePlaceholder}
               autoFocus
               required
+              aria-required="true"
               style={baseStyles.input}
             />
           </div>
 
           <div style={{ marginBottom: '24px' }}>
             <label
+              htmlFor="login-password"
               style={{
                 display: 'block',
                 color: colors.subtext1,
@@ -135,11 +141,13 @@ export default function LoginPage({
               Password
             </label>
             <input
+              id="login-password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
               required
+              aria-required="true"
               style={baseStyles.input}
             />
           </div>
@@ -147,6 +155,7 @@ export default function LoginPage({
           <button
             type="submit"
             disabled={loading}
+            aria-busy={loading}
             style={{
               ...baseStyles.button.primary,
               width: '100%',
@@ -159,6 +168,6 @@ export default function LoginPage({
           </button>
         </form>
       </div>
-    </div>
+    </main>
   );
 }

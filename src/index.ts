@@ -20,3 +20,22 @@ export type { SSEConfig } from './sse';
 
 // Theme
 export { colors, statusColors, baseStyles } from './theme';
+
+// Components
+export {
+  StatusBadge,
+  DataTable,
+  Modal,
+  LoadingSpinner,
+  ErrorBoundary,
+} from './components';
+export type {
+  StatusBadgeProps,
+  StatusType,
+  DataTableProps,
+  DataTableColumn,
+  ModalProps,
+  ModalVariant,
+  LoadingSpinnerProps,
+  ErrorBoundaryProps,
+} from './components';
