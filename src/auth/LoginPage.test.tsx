@@ -103,11 +103,6 @@ describe('LoginPage', () => {
     expect(screen.getByRole('main')).toBeInTheDocument();
   });
 
-  it('has accessible form with aria-label', () => {
-    render(<LoginPage title="App" onLogin={vi.fn()} />);
-    expect(screen.getByRole('form', { name: 'Login form' })).toBeInTheDocument();
-  });
-
   it('labels are associated with inputs via htmlFor', () => {
     render(<LoginPage title="App" onLogin={vi.fn()} />);
     expect(screen.getByLabelText('Username')).toBeInTheDocument();

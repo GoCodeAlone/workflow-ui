@@ -1,4 +1,4 @@
-import { useLayoutEffect, type CSSProperties } from 'react';
+import { useEffect, type CSSProperties } from 'react';
 import { colors } from '../theme';
 
 export type LoadingSpinnerSize = 'sm' | 'md' | 'lg';
@@ -52,7 +52,7 @@ export default function LoadingSpinner({
   style,
   color,
 }: LoadingSpinnerProps) {
-  useLayoutEffect(() => {
+  useEffect(() => {
     ensureSpinKeyframes();
   }, []);
 
