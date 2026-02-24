@@ -1,4 +1,8 @@
 import '@testing-library/jest-dom';
+import * as axeMatchers from 'vitest-axe/matchers';
+import { expect } from 'vitest';
+
+expect.extend(axeMatchers);
 
 // Polyfill localStorage for test environment.
 // Node 22+ has a built-in localStorage that conflicts with jsdom.
