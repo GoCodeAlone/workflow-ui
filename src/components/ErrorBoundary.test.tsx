@@ -36,7 +36,7 @@ describe('ErrorBoundary', () => {
     );
     expect(screen.getByRole('alert')).toBeInTheDocument();
     expect(screen.getByText('Something went wrong')).toBeInTheDocument();
-    expect(screen.getByText('Boom!')).toBeInTheDocument();
+    expect(screen.getByText(/An unexpected error occurred/)).toBeInTheDocument();
   });
 
   it('renders custom fallback when provided', () => {

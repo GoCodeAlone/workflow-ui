@@ -99,7 +99,7 @@ export default function StatusBadge({
 
   return (
     <span style={containerStyle}>
-      <span style={dotStyle} />
+      <span style={dotStyle} aria-hidden="true" role="presentation" />
       {displayLabel}
     </span>
   );

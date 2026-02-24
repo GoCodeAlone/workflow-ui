@@ -18,11 +18,9 @@ interface ErrorBoundaryState {
 
 /** Default error display shown when no fallback prop is provided. */
 function DefaultErrorFallback({
-  error,
   onReset,
   style,
 }: {
-  error: Error;
   onReset: () => void;
   style?: CSSProperties;
 }) {
@@ -57,7 +55,7 @@ function DefaultErrorFallback({
           wordBreak: 'break-word',
         }}
       >
-        {error.message}
+        An unexpected error occurred. Please try again or contact support if the problem persists.
       </p>
       <button
         onClick={onReset}
@@ -107,7 +105,6 @@ export default class ErrorBoundary extends Component<
       }
       return (
         <DefaultErrorFallback
-          error={error}
           onReset={this.reset}
           style={this.props.style}
         />

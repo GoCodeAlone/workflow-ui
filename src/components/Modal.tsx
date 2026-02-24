@@ -49,13 +49,18 @@ export default function Modal({
   style,
 }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
+  const previouslyFocusedRef = useRef<HTMLElement | null>(null);
   const titleId = useId();
 
-  // Focus trap: focus the dialog on open.
+  // Focus trap: focus the dialog on open, restore focus on close/unmount.
   useEffect(() => {
-    if (open) {
-      dialogRef.current?.focus();
-    }
+    if (!open) return;
+    previouslyFocusedRef.current = document.activeElement as HTMLElement | null;
+    dialogRef.current?.focus();
+    return () => {
+      previouslyFocusedRef.current?.focus();
+      previouslyFocusedRef.current = null;
+    };
   }, [open]);
 
   // Prevent body scroll while open.
