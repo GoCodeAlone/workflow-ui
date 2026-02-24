@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback, type CSSProperties, type ReactNode } from 'react';
+import { useEffect, useRef, useCallback, useId, type CSSProperties, type ReactNode, type MouseEvent } from 'react';
 import { colors, baseStyles } from '../../theme';
 
 export type ModalVariant = 'info' | 'confirmation' | 'error';
@@ -43,6 +43,7 @@ export default function Modal({
 }: ModalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
+  const titleId = useId();
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -57,15 +58,6 @@ export default function Modal({
     }
   }, [open]);
 
-  const handleKeyDown = useCallback(
-    (e: React.KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose();
-      }
-    },
-    [onClose],
-  );
-
   // Handle native dialog cancel event (ESC key)
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -79,7 +71,7 @@ export default function Modal({
   }, [onClose]);
 
   const handleBackdropClick = useCallback(
-    (e: React.MouseEvent) => {
+    (e: MouseEvent<HTMLDialogElement>) => {
       if (e.target === dialogRef.current) {
         onClose();
       }
@@ -94,9 +86,8 @@ export default function Modal({
   return (
     <dialog
       ref={dialogRef}
-      onKeyDown={handleKeyDown}
       onClick={handleBackdropClick}
-      aria-labelledby="modal-title"
+      aria-labelledby={titleId}
       style={{
         backgroundColor: colors.surface0,
         color: colors.text,
@@ -117,7 +108,7 @@ export default function Modal({
           }}
         >
           <h2
-            id="modal-title"
+            id={titleId}
             style={{
               margin: 0,
               fontSize: '18px',

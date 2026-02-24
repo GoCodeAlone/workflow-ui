@@ -44,8 +44,10 @@ describe('Modal', () => {
       </Modal>,
     );
     const dialog = screen.getByRole('dialog');
-    expect(dialog).toHaveAttribute('aria-labelledby', 'modal-title');
-    expect(screen.getByText('My Dialog')).toHaveAttribute('id', 'modal-title');
+    const labelledById = dialog.getAttribute('aria-labelledby');
+    expect(labelledById).toBeTruthy();
+    const titleEl = screen.getByText('My Dialog');
+    expect(titleEl).toHaveAttribute('id', labelledById);
   });
 
   it('calls onClose when close button is clicked', async () => {
