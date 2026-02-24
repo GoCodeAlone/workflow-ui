@@ -1,5 +1,6 @@
 import {
   useEffect,
+  useId,
   useRef,
   type CSSProperties,
   type ReactNode,
@@ -9,6 +10,8 @@ import { createPortal } from 'react-dom';
 import { colors, baseStyles } from '../theme';
 
 export interface ModalAction {
+  /** Stable unique identifier for this action button (used as React key). */
+  id?: string;
   /** Button label. */
   label: string;
   /** Click handler. */
@@ -46,6 +49,7 @@ export default function Modal({
   style,
 }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
+  const titleId = useId();
 
   // Focus trap: focus the dialog on open.
   useEffect(() => {
@@ -136,7 +140,7 @@ export default function Modal({
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
-        aria-labelledby={title ? 'modal-title' : undefined}
+        aria-labelledby={title ? titleId : undefined}
         tabIndex={-1}
         style={dialogStyle}
         onClick={(e) => e.stopPropagation()}
@@ -145,7 +149,7 @@ export default function Modal({
         {(title != null) && (
           <div style={headerStyle}>
             <h2
-              id="modal-title"
+              id={titleId}
               style={{
                 margin: 0,
                 fontSize: '18px',
@@ -179,9 +183,9 @@ export default function Modal({
 
         {actions && actions.length > 0 && (
           <div style={footerStyle}>
-            {actions.map((action) => (
+            {actions.map((action, idx) => (
               <button
-                key={action.label}
+                key={action.id ?? idx}
                 onClick={action.onClick}
                 disabled={action.disabled}
                 style={{
@@ -198,6 +202,10 @@ export default function Modal({
       </div>
     </div>
   );
+
+  if (typeof document === 'undefined') {
+    return null;
+  }
 
   return createPortal(modal, document.body);
 }
