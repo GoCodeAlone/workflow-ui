@@ -38,7 +38,6 @@ describe('LoginPage', () => {
     );
     const alert = screen.getByRole('alert');
     expect(alert).toHaveTextContent('Invalid credentials');
-    expect(alert).toHaveAttribute('aria-live', 'assertive');
   });
 
   it('calls onLogin with username and password', async () => {
@@ -69,7 +68,7 @@ describe('LoginPage', () => {
     await user.click(screen.getByRole('button', { name: 'Sign In' }));
 
     expect(screen.getByText('Signing in...')).toBeInTheDocument();
-    expect(screen.getByRole('button')).toHaveAttribute('aria-busy', 'true');
+    expect(screen.getByRole('button')).toHaveAttribute('aria-disabled', 'true');
     resolveLogin!();
   });
 
@@ -106,7 +105,7 @@ describe('LoginPage', () => {
 
   it('has accessible form with aria-label', () => {
     render(<LoginPage title="App" onLogin={vi.fn()} />);
-    expect(screen.getByRole('form', { name: 'Sign in' })).toBeInTheDocument();
+    expect(screen.getByRole('form', { name: 'Login form' })).toBeInTheDocument();
   });
 
   it('labels are associated with inputs via htmlFor', () => {

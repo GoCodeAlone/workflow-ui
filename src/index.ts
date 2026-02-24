@@ -28,14 +28,21 @@ export {
   Modal,
   LoadingSpinner,
   ErrorBoundary,
+  Sidebar,
 } from './components';
 export type {
   StatusBadgeProps,
-  StatusType,
+  StatusValue,
+  StatusBadgeSize,
   DataTableProps,
   DataTableColumn,
+  SortState,
+  SortDirection,
   ModalProps,
-  ModalVariant,
+  ModalAction,
   LoadingSpinnerProps,
+  LoadingSpinnerSize,
   ErrorBoundaryProps,
+  SidebarProps,
+  SidebarItem,
 } from './components';

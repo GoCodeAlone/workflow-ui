@@ -1,14 +1,22 @@
-export { StatusBadge } from './StatusBadge';
-export type { StatusBadgeProps, StatusType } from './StatusBadge';
+export { default as StatusBadge } from './StatusBadge';
+export type { StatusBadgeProps, StatusValue, StatusBadgeSize } from './StatusBadge';
 
-export { DataTable } from './DataTable';
-export type { DataTableProps, DataTableColumn } from './DataTable';
+export { default as DataTable } from './DataTable';
+export type {
+  DataTableProps,
+  DataTableColumn,
+  SortState,
+  SortDirection,
+} from './DataTable';
 
-export { Modal } from './Modal';
-export type { ModalProps, ModalVariant } from './Modal';
+export { default as Modal } from './Modal';
+export type { ModalProps, ModalAction } from './Modal';
 
-export { LoadingSpinner } from './LoadingSpinner';
-export type { LoadingSpinnerProps } from './LoadingSpinner';
+export { default as LoadingSpinner } from './LoadingSpinner';
+export type { LoadingSpinnerProps, LoadingSpinnerSize } from './LoadingSpinner';
 
-export { ErrorBoundary } from './ErrorBoundary';
+export { default as ErrorBoundary } from './ErrorBoundary';
 export type { ErrorBoundaryProps } from './ErrorBoundary';
+
+export { default as Sidebar } from './Sidebar';
+export type { SidebarProps, SidebarItem } from './Sidebar';
