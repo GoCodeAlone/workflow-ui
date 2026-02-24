@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react';
+import { useEffect, type CSSProperties } from 'react';
 import { colors } from '../theme';
 
 export type LoadingSpinnerSize = 'sm' | 'md' | 'lg';
@@ -52,7 +52,9 @@ export default function LoadingSpinner({
   style,
   color,
 }: LoadingSpinnerProps) {
-  ensureSpinKeyframes();
+  useEffect(() => {
+    ensureSpinKeyframes();
+  }, []);
 
   const dim = spinnerDimension[size];
   const bw = borderWidth[size];

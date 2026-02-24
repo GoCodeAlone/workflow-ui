@@ -1,4 +1,4 @@
-import { useState, type CSSProperties, type ReactNode } from 'react';
+import { useState, useMemo, type CSSProperties, type ReactNode } from 'react';
 import { colors, baseStyles } from '../theme';
 
 export interface DataTableColumn<T> {
@@ -83,24 +83,26 @@ export default function DataTable<T extends Record<string, unknown>>({
   const totalPages = Math.max(1, Math.ceil(data.length / safePageSize));
   const safePage = Math.min(currentPage, totalPages);
 
-  // Client-side sort when no external onSort handler
-  const sortedData = onSort
-    ? data
-    : sortState
-      ? [...data].sort((a, b) => {
-          const av = a[sortState.key];
-          const bv = b[sortState.key];
-          const cmp =
-            av == null ? -1
-            : bv == null ? 1
-            : typeof av === 'number' && typeof bv === 'number'
-              ? av - bv
-              : String(av).localeCompare(String(bv));
-          return sortState.direction === 'asc' ? cmp : -cmp;
-        })
-      : data;
+  // Client-side sort when no external onSort handler — memoized to avoid sorting on every render
+  const sortedData = useMemo(() => {
+    if (onSort || !sortState) return data;
+    return [...data].sort((a, b) => {
+      const av = a[sortState.key];
+      const bv = b[sortState.key];
+      const cmp =
+        av == null ? -1
+        : bv == null ? 1
+        : typeof av === 'number' && typeof bv === 'number'
+          ? av - bv
+          : String(av).localeCompare(String(bv));
+      return sortState.direction === 'asc' ? cmp : -cmp;
+    });
+  }, [data, onSort, sortState]);
 
-  const pageData = sortedData.slice((safePage - 1) * safePageSize, safePage * safePageSize);
+  const pageData = useMemo(
+    () => sortedData.slice((safePage - 1) * safePageSize, safePage * safePageSize),
+    [sortedData, safePage, safePageSize],
+  );
 
   function handleSort(col: DataTableColumn<T>) {
     if (!col.sortable) return;
