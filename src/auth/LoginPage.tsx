@@ -1,4 +1,4 @@
-import { useState, type FormEvent, type CSSProperties } from 'react';
+import { useState, useId, type FormEvent, type CSSProperties } from 'react';
 import { colors, baseStyles } from '../theme';
 
 export interface LoginPageProps {
@@ -34,6 +34,11 @@ export default function LoginPage({
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const titleId = useId();
+  const usernameId = useId();
+  const passwordId = useId();
+  const errorId = useId();
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setLoading(true);
@@ -45,7 +50,7 @@ export default function LoginPage({
   }
 
   return (
-    <div
+    <main
       style={{
         ...baseStyles.container,
         display: 'flex',
@@ -65,6 +70,7 @@ export default function LoginPage({
       >
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
           <h1
+            id={titleId}
             style={{
               fontSize: '28px',
               fontWeight: '700',
@@ -82,25 +88,39 @@ export default function LoginPage({
           )}
         </div>
 
-        {error && (
-          <div
-            style={{
-              backgroundColor: `${colors.red}22`,
-              border: `1px solid ${colors.red}`,
-              borderRadius: '6px',
-              padding: '10px 14px',
-              color: colors.red,
-              fontSize: '14px',
-              marginBottom: '20px',
-            }}
-          >
-            {error}
-          </div>
-        )}
+        <div
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          {error && (
+            <div
+              id={errorId}
+              role="alert"
+              style={{
+                backgroundColor: `${colors.red}22`,
+                border: `1px solid ${colors.red}`,
+                borderRadius: '6px',
+                padding: '10px 14px',
+                color: colors.red,
+                fontSize: '14px',
+                marginBottom: '20px',
+              }}
+            >
+              {error}
+            </div>
+          )}
+        </div>
 
-        <form onSubmit={handleSubmit}>
+        <form
+          onSubmit={handleSubmit}
+          aria-label="Login form"
+          aria-busy={loading}
+          noValidate
+        >
           <div style={{ marginBottom: '16px' }}>
             <label
+              htmlFor={usernameId}
               style={{
                 display: 'block',
                 color: colors.subtext1,
@@ -112,18 +132,25 @@ export default function LoginPage({
               {usernameLabel}
             </label>
             <input
+              id={usernameId}
               type={usernameType}
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder={usernamePlaceholder}
               autoFocus
               required
-              style={baseStyles.input}
+              aria-required="true"
+              aria-describedby={error ? errorId : undefined}
+              style={{
+                ...baseStyles.input,
+                outlineColor: colors.blue,
+              }}
             />
           </div>
 
           <div style={{ marginBottom: '24px' }}>
             <label
+              htmlFor={passwordId}
               style={{
                 display: 'block',
                 color: colors.subtext1,
@@ -135,30 +162,38 @@ export default function LoginPage({
               Password
             </label>
             <input
+              id={passwordId}
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
               required
-              style={baseStyles.input}
+              aria-required="true"
+              aria-describedby={error ? errorId : undefined}
+              style={{
+                ...baseStyles.input,
+                outlineColor: colors.blue,
+              }}
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
+            aria-disabled={loading}
             style={{
               ...baseStyles.button.primary,
               width: '100%',
               padding: '10px',
               fontSize: '15px',
               opacity: loading ? 0.7 : 1,
+              outlineColor: colors.blue,
             }}
           >
             {loading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>
       </div>
-    </div>
+    </main>
   );
 }
