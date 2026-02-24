@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, type CSSProperties, type ReactNode } from 'react';
+import { useState, useMemo, type CSSProperties, type ReactNode } from 'react';
 import { colors, baseStyles } from '../theme';
 
 export interface DataTableColumn<T> {
@@ -82,11 +82,6 @@ export default function DataTable<T extends Record<string, unknown>>({
   const safePageSize = Math.max(1, pageSize);
   const totalPages = Math.max(1, Math.ceil(data.length / safePageSize));
   const safePage = Math.min(currentPage, totalPages);
-
-  // Clamp page to valid range when data length or pageSize changes
-  useEffect(() => {
-    setCurrentPage((p) => Math.min(p, Math.max(1, Math.ceil(data.length / safePageSize))));
-  }, [data.length, safePageSize]);
 
   // Client-side sort when no external onSort handler — memoized to avoid sorting on every render
   const sortedData = useMemo(() => {

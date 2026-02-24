@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useMemo, type CSSProperties, type ReactNode } from 'react';
+import { useState, useCallback, useMemo, type CSSProperties, type ReactNode } from 'react';
 import { colors, baseStyles } from '../../theme';
 
 export interface DataTableColumn<T> {
@@ -41,14 +41,6 @@ export default function DataTable<T extends Record<string, unknown>>({
   const [sortDir, setSortDir] = useState<SortDirection>('asc');
   const [page, setPage] = useState(0);
 
-  // Clamp page when data length or pageSize changes to avoid empty views
-  useEffect(() => {
-    if (pageSize > 0) {
-      const total = Math.max(1, Math.ceil(data.length / pageSize));
-      setPage((p) => Math.min(p, total - 1));
-    }
-  }, [data.length, pageSize]);
-
   const handleSort = useCallback(
     (key: keyof T & string) => {
       if (sortKey === key) {
@@ -78,10 +70,11 @@ export default function DataTable<T extends Record<string, unknown>>({
   }, [data, sortKey, sortDir]);
 
   const totalPages = pageSize > 0 ? Math.max(1, Math.ceil(data.length / pageSize)) : 1;
+  const safePage = Math.min(page, totalPages - 1);
 
   const paginated = useMemo(
-    () => (pageSize > 0 ? sorted.slice(page * pageSize, (page + 1) * pageSize) : sorted),
-    [sorted, page, pageSize],
+    () => (pageSize > 0 ? sorted.slice(safePage * pageSize, (safePage + 1) * pageSize) : sorted),
+    [sorted, safePage, pageSize],
   );
 
   return (
@@ -173,11 +166,11 @@ export default function DataTable<T extends Record<string, unknown>>({
           <button
             type="button"
             onClick={() => setPage((p) => Math.max(0, p - 1))}
-            disabled={page === 0}
+            disabled={safePage === 0}
             aria-label="Previous page"
             style={{
               ...baseStyles.button.secondary,
-              opacity: page === 0 ? 0.5 : 1,
+              opacity: safePage === 0 ? 0.5 : 1,
             }}
           >
             Previous
@@ -187,16 +180,16 @@ export default function DataTable<T extends Record<string, unknown>>({
             aria-atomic="true"
             style={{ color: colors.subtext0, fontSize: '13px' }}
           >
-            Page {page + 1} of {totalPages}
+            Page {safePage + 1} of {totalPages}
           </span>
           <button
             type="button"
             onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
-            disabled={page >= totalPages - 1}
+            disabled={safePage >= totalPages - 1}
             aria-label="Next page"
             style={{
               ...baseStyles.button.secondary,
-              opacity: page >= totalPages - 1 ? 0.5 : 1,
+              opacity: safePage >= totalPages - 1 ? 0.5 : 1,
             }}
           >
             Next
