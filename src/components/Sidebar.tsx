@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from 'react';
+import type { CSSProperties, ReactNode, KeyboardEvent } from 'react';
 import { colors } from '../theme';
 
 export interface SidebarItem {
@@ -184,7 +184,7 @@ function SidebarNavItem({ item, collapsed, onNavigate }: SidebarNavItemProps) {
     if (!isDisabled) onNavigate(item);
   }
 
-  function handleKeyDown(e: React.KeyboardEvent) {
+  function handleKeyDown(e: KeyboardEvent<HTMLDivElement>) {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       handleClick();

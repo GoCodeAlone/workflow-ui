@@ -1,4 +1,4 @@
-import { useState, type CSSProperties } from 'react';
+import { useState, type CSSProperties, type ReactNode } from 'react';
 import { colors, baseStyles } from '../theme';
 
 export interface DataTableColumn<T> {
@@ -9,7 +9,7 @@ export interface DataTableColumn<T> {
   /** Whether this column is sortable. Default: false */
   sortable?: boolean;
   /** Optional custom cell renderer. */
-  render?: (value: T[keyof T], row: T) => React.ReactNode;
+  render?: (value: T[keyof T], row: T) => ReactNode;
   /** Optional column header style override. */
   headerStyle?: CSSProperties;
   /** Optional cell style override. */
@@ -114,6 +114,7 @@ export default function DataTable<T extends Record<string, unknown>>({
     fontFamily: "'Inter', 'Segoe UI', system-ui, sans-serif",
     ...style,
   };
+  const thPadding = baseStyles.th.padding;
 
   return (
     <div style={containerStyle}>
@@ -126,10 +127,9 @@ export default function DataTable<T extends Record<string, unknown>>({
                   key={col.key}
                   style={{
                     ...baseStyles.th,
-                    cursor: col.sortable ? 'pointer' : 'default',
+                    padding: 0,
                     ...col.headerStyle,
                   }}
-                  onClick={() => handleSort(col)}
                   aria-sort={
                     sortState?.key === col.key
                       ? sortState.direction === 'asc'
@@ -138,12 +138,32 @@ export default function DataTable<T extends Record<string, unknown>>({
                       : undefined
                   }
                 >
-                  {col.label}
-                  {col.sortable && (
-                    <SortIcon
-                      direction={sortState?.key === col.key ? sortState.direction : undefined}
-                      active={sortState?.key === col.key}
-                    />
+                  {col.sortable ? (
+                    <button
+                      onClick={() => handleSort(col)}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        padding: thPadding,
+                        width: '100%',
+                        textAlign: 'left',
+                        font: 'inherit',
+                        color: 'inherit',
+                        display: 'flex',
+                        alignItems: 'center',
+                      }}
+                    >
+                      {col.label}
+                      <SortIcon
+                        direction={sortState?.key === col.key ? sortState.direction : undefined}
+                        active={sortState?.key === col.key}
+                      />
+                    </button>
+                  ) : (
+                    <span style={{ display: 'block', padding: thPadding }}>
+                      {col.label}
+                    </span>
                   )}
                 </th>
               ))}
@@ -173,7 +193,7 @@ export default function DataTable<T extends Record<string, unknown>>({
                     <td key={col.key} style={{ ...baseStyles.td, ...col.cellStyle }}>
                       {col.render
                         ? col.render(row[col.key], row)
-                        : (row[col.key] as React.ReactNode)}
+                        : (row[col.key] as ReactNode)}
                     </td>
                   ))}
                 </tr>
