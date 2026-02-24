@@ -47,7 +47,7 @@ describe('DataTable', () => {
         caption="Workflow list"
       />,
     );
-    expect(screen.getByRole('grid', { name: 'Workflow list' })).toBeInTheDocument();
+    expect(screen.getByRole('table', { name: 'Workflow list' })).toBeInTheDocument();
   });
 
   it('sorts by column when clicking sortable header', async () => {

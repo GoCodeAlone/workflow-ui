@@ -1,15 +1,15 @@
-import { useState, useCallback, type CSSProperties } from 'react';
+import { useState, useCallback, useEffect, type CSSProperties, type ReactNode } from 'react';
 import { colors, baseStyles } from '../../theme';
 
 export interface DataTableColumn<T> {
   /** Unique key matching a property in the row data. */
-  key: string;
+  key: keyof T & string;
   /** Display header text. */
   header: string;
   /** Whether this column is sortable. Default: false */
   sortable?: boolean;
   /** Custom cell renderer. */
-  render?: (value: unknown, row: T) => React.ReactNode;
+  render?: (value: T[keyof T & string], row: T) => ReactNode;
 }
 
 export interface DataTableProps<T> {
@@ -37,12 +37,20 @@ export default function DataTable<T extends Record<string, unknown>>({
   caption,
   style,
 }: DataTableProps<T>) {
-  const [sortKey, setSortKey] = useState<string | null>(null);
+  const [sortKey, setSortKey] = useState<(keyof T & string) | null>(null);
   const [sortDir, setSortDir] = useState<SortDirection>('asc');
   const [page, setPage] = useState(0);
 
+  // Clamp page when data length or pageSize changes to avoid empty views
+  useEffect(() => {
+    if (pageSize > 0) {
+      const total = Math.max(1, Math.ceil(data.length / pageSize));
+      setPage((p) => Math.min(p, total - 1));
+    }
+  }, [data.length, pageSize]);
+
   const handleSort = useCallback(
-    (key: string) => {
+    (key: keyof T & string) => {
       if (sortKey === key) {
         setSortDir((d) => (d === 'asc' ? 'desc' : 'asc'));
       } else {
@@ -73,7 +81,7 @@ export default function DataTable<T extends Record<string, unknown>>({
 
   return (
     <div style={style}>
-      <table style={baseStyles.table} role="grid" aria-label={caption}>
+      <table style={baseStyles.table} aria-label={caption}>
         {caption && <caption style={{ ...visuallyHidden }}>{caption}</caption>}
         <thead>
           <tr>
