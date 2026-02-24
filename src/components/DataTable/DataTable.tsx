@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, type CSSProperties, type ReactNode } from 'react';
+import { useState, useCallback, useEffect, useMemo, type CSSProperties, type ReactNode } from 'react';
 import { colors, baseStyles } from '../../theme';
 
 export interface DataTableColumn<T> {
@@ -62,22 +62,27 @@ export default function DataTable<T extends Record<string, unknown>>({
     [sortKey],
   );
 
-  const sorted = [...data].sort((a, b) => {
-    if (!sortKey) return 0;
-    const aVal = a[sortKey];
-    const bVal = b[sortKey];
-    if (aVal == null && bVal == null) return 0;
-    if (aVal == null) return 1;
-    if (bVal == null) return -1;
-    const cmp = String(aVal).localeCompare(String(bVal), undefined, {
-      numeric: true,
+  const sorted = useMemo(() => {
+    if (!sortKey) return data;
+    return [...data].sort((a, b) => {
+      const aVal = a[sortKey];
+      const bVal = b[sortKey];
+      if (aVal == null && bVal == null) return 0;
+      if (aVal == null) return 1;
+      if (bVal == null) return -1;
+      const cmp = String(aVal).localeCompare(String(bVal), undefined, {
+        numeric: true,
+      });
+      return sortDir === 'asc' ? cmp : -cmp;
     });
-    return sortDir === 'asc' ? cmp : -cmp;
-  });
+  }, [data, sortKey, sortDir]);
 
-  const paginated =
-    pageSize > 0 ? sorted.slice(page * pageSize, (page + 1) * pageSize) : sorted;
   const totalPages = pageSize > 0 ? Math.max(1, Math.ceil(data.length / pageSize)) : 1;
+
+  const paginated = useMemo(
+    () => (pageSize > 0 ? sorted.slice(page * pageSize, (page + 1) * pageSize) : sorted),
+    [sorted, page, pageSize],
+  );
 
   return (
     <div style={style}>

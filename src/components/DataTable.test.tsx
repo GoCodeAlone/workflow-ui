@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import DataTable, { type DataTableColumn } from './DataTable';
 
-interface Row {
+interface Row extends Record<string, unknown> {
   id: number;
   name: string;
   status: string;

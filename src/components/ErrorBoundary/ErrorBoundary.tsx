@@ -74,7 +74,6 @@ export default class ErrorBoundary extends Component<
             type="button"
             onClick={this.handleRetry}
             style={baseStyles.button.primary}
-            aria-label="Retry"
           >
             Try Again
           </button>

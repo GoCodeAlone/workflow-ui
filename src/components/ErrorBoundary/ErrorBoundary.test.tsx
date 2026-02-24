@@ -80,7 +80,7 @@ describe('ErrorBoundary', () => {
     );
 
     expect(screen.getByRole('alert')).toBeInTheDocument();
-    const retryBtn = screen.getByRole('button', { name: 'Retry' });
+    const retryBtn = screen.getByRole('button', { name: 'Try Again' });
     expect(retryBtn).toBeInTheDocument();
 
     // After clicking retry, re-render with non-throwing child

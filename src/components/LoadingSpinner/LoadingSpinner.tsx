@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react';
+import { useLayoutEffect, type CSSProperties } from 'react';
 import { colors } from '../../theme';
 
 export interface LoadingSpinnerProps {
@@ -29,7 +29,9 @@ export default function LoadingSpinner({
   color = colors.blue,
   style,
 }: LoadingSpinnerProps) {
-  ensureKeyframes();
+  useLayoutEffect(() => {
+    ensureKeyframes();
+  }, []);
 
   return (
     <div

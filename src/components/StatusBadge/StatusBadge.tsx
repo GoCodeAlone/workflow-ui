@@ -17,18 +17,20 @@ export interface StatusBadgeProps {
   /** Optional label override. Defaults to the status string. */
   label?: string;
   /** Optional size variant. */
-  size?: 'sm' | 'md' | 'lg';
+  size?: StatusBadgeSize;
   /** Override container style. */
   style?: CSSProperties;
 }
 
-const sizeStyles: Record<string, CSSProperties> = {
+type StatusBadgeSize = 'sm' | 'md' | 'lg';
+
+const sizeStyles: Record<StatusBadgeSize, CSSProperties> = {
   sm: { fontSize: '11px', padding: '2px 8px' },
   md: { fontSize: '12px', padding: '4px 10px' },
   lg: { fontSize: '14px', padding: '6px 14px' },
 };
 
-const dotSizes: Record<string, number> = {
+const dotSizes: Record<StatusBadgeSize, number> = {
   sm: 6,
   md: 8,
   lg: 10,
