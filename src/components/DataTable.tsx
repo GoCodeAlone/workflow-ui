@@ -73,7 +73,14 @@ export default function DataTable<T extends Record<string, unknown>>({
   const [currentPage, setCurrentPage] = useState(1);
   const [sortState, setSortState] = useState<SortState<T> | null>(null);
 
-  const totalPages = Math.max(1, Math.ceil(data.length / pageSize));
+  function getRowKey(row: T, absoluteIdx: number): string | number {
+    if (rowKey) return rowKey(row, absoluteIdx);
+    const id = (row as Record<string, unknown>).id;
+    return (typeof id === 'string' || typeof id === 'number') ? id : absoluteIdx;
+  }
+
+  const safePageSize = Math.max(1, pageSize);
+  const totalPages = Math.max(1, Math.ceil(data.length / safePageSize));
   const safePage = Math.min(currentPage, totalPages);
 
   // Client-side sort when no external onSort handler
@@ -93,7 +100,7 @@ export default function DataTable<T extends Record<string, unknown>>({
         })
       : data;
 
-  const pageData = sortedData.slice((safePage - 1) * pageSize, safePage * pageSize);
+  const pageData = sortedData.slice((safePage - 1) * safePageSize, safePage * safePageSize);
 
   function handleSort(col: DataTableColumn<T>) {
     if (!col.sortable) return;
@@ -187,7 +194,7 @@ export default function DataTable<T extends Record<string, unknown>>({
             ) : (
               pageData.map((row, idx) => (
                 <tr
-                  key={rowKey ? rowKey(row, (safePage - 1) * pageSize + idx) : (safePage - 1) * pageSize + idx}
+                  key={getRowKey(row, (safePage - 1) * safePageSize + idx)}
                 >
                   {columns.map((col) => (
                     <td key={col.key} style={{ ...baseStyles.td, ...col.cellStyle }}>
