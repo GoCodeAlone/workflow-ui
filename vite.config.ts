@@ -12,6 +12,7 @@ export default defineConfig({
         'auth/index': resolve(__dirname, 'src/auth/index.ts'),
         'sse/index': resolve(__dirname, 'src/sse/index.ts'),
         'theme/index': resolve(__dirname, 'src/theme/index.ts'),
+        'components/index': resolve(__dirname, 'src/components/index.ts'),
       },
       formats: ['es', 'cjs'],
     },
