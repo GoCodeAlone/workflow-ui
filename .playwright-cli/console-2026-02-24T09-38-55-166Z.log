@@ -1,0 +1,7 @@
+[   30619ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:9090/api/auth/login:0
+[   30622ms] Error: HTTP 401: {"error":"invalid credentials"}
+
+    at Va (http://localhost:9090/assets/index-CJwKPXNi.js:9:37716)
+    at async login (http://localhost:9090/assets/index-CJwKPXNi.js:9:41051)
+    at async y (http://localhost:9090/assets/index-CJwKPXNi.js:9:41779)
+[  171098ms] [ERROR] EventSource's response has a MIME type ("text/html") that is not "text/event-stream". Aborting the connection. @ http://localhost:9090/:0

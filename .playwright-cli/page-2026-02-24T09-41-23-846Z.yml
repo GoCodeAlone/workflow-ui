@@ -1,0 +1,133 @@
+- generic [ref=e17]:
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - heading "Ratchet" [level=2] [ref=e20]
+      - paragraph [ref=e21]: AI Agent Platform
+    - navigation [ref=e22]:
+      - button "[D] Dashboard" [ref=e23] [cursor=pointer]:
+        - generic [ref=e24]: "[D]"
+        - text: Dashboard
+      - button "[A] Agents" [ref=e25] [cursor=pointer]:
+        - generic [ref=e26]: "[A]"
+        - text: Agents
+      - button "[T] Tasks" [ref=e27] [cursor=pointer]:
+        - generic [ref=e28]: "[T]"
+        - text: Tasks
+      - button "[M] Messages" [ref=e29] [cursor=pointer]:
+        - generic [ref=e30]: "[M]"
+        - text: Messages
+      - button "[P] Projects" [ref=e31] [cursor=pointer]:
+        - generic [ref=e32]: "[P]"
+        - text: Projects
+      - button "[K] Skills" [ref=e33] [cursor=pointer]:
+        - generic [ref=e34]: "[K]"
+        - text: Skills
+      - button "[S] Settings" [ref=e35] [cursor=pointer]:
+        - generic [ref=e36]: "[S]"
+        - text: Settings
+    - generic [ref=e37]:
+      - generic [ref=e38]: admin
+      - button "Sign Out" [ref=e39] [cursor=pointer]
+  - generic [ref=e40]:
+    - heading "Agents" [level=3] [ref=e81]
+    - generic [ref=e82]:
+      - generic [ref=e83]:
+        - generic [ref=e84]: 4 agents registered
+        - generic [ref=e85]:
+          - button "Refresh" [ref=e86] [cursor=pointer]
+          - button "+ New Agent" [ref=e87] [cursor=pointer]
+      - generic [ref=e188]:
+        - generic [ref=e189]:
+          - generic [ref=e190]:
+            - heading "TestAgent" [level=3] [ref=e191]
+            - paragraph [ref=e192]: tester
+          - button "×" [ref=e193] [cursor=pointer]
+        - generic [ref=e194]:
+          - generic [ref=e195]:
+            - generic [ref=e196]: Provider
+            - generic [ref=e197]: default
+          - generic [ref=e199]: Model
+          - generic [ref=e200]:
+            - generic [ref=e201]: Team
+            - generic [ref=e202]: beta
+          - generic [ref=e203]:
+            - generic [ref=e204]: Status
+            - generic [ref=e205]: idle
+          - generic [ref=e207]:
+            - generic [ref=e208]: Role
+            - generic [ref=e209]: Member
+        - generic [ref=e210]:
+          - generic [ref=e212]: Skills (0)
+          - generic [ref=e213]: No skills assigned.
+        - generic [ref=e214]:
+          - generic [ref=e215]: Recent Transcripts
+          - generic [ref=e216]: No transcripts yet
+      - table [ref=e89]:
+        - rowgroup [ref=e90]:
+          - row "Name Role Provider Status Current Task Team Actions" [ref=e91]:
+            - columnheader "Name" [ref=e92]
+            - columnheader "Role" [ref=e93]
+            - columnheader "Provider" [ref=e94]
+            - columnheader "Status" [ref=e95]
+            - columnheader "Current Task" [ref=e96]
+            - columnheader "Team" [ref=e97]
+            - columnheader "Actions" [ref=e98]
+        - rowgroup [ref=e99]:
+          - row "Orchestrator lead lead default idle — alpha Stop Edit Delete" [ref=e100] [cursor=pointer]:
+            - cell "Orchestrator lead" [ref=e101]:
+              - generic [ref=e102]:
+                - generic [ref=e103]: Orchestrator
+                - generic [ref=e104]: lead
+            - cell "lead" [ref=e105]
+            - cell "default" [ref=e106]
+            - cell "idle" [ref=e107]:
+              - generic [ref=e108]: idle
+            - cell "—" [ref=e110]
+            - cell "alpha" [ref=e111]
+            - cell "Stop Edit Delete" [ref=e112]:
+              - generic [ref=e113]:
+                - button "Stop" [ref=e114]
+                - button "Edit" [ref=e115]
+                - button "Delete" [ref=e116]
+          - row "Developer developer default idle — alpha Stop Edit Delete" [ref=e117] [cursor=pointer]:
+            - cell "Developer" [ref=e118]:
+              - generic [ref=e120]: Developer
+            - cell "developer" [ref=e121]
+            - cell "default" [ref=e122]
+            - cell "idle" [ref=e123]:
+              - generic [ref=e124]: idle
+            - cell "—" [ref=e126]
+            - cell "alpha" [ref=e127]
+            - cell "Stop Edit Delete" [ref=e128]:
+              - generic [ref=e129]:
+                - button "Stop" [ref=e130]
+                - button "Edit" [ref=e131]
+                - button "Delete" [ref=e132]
+          - row "Reviewer reviewer default idle — alpha Stop Edit Delete" [ref=e133] [cursor=pointer]:
+            - cell "Reviewer" [ref=e134]:
+              - generic [ref=e136]: Reviewer
+            - cell "reviewer" [ref=e137]
+            - cell "default" [ref=e138]
+            - cell "idle" [ref=e139]:
+              - generic [ref=e140]: idle
+            - cell "—" [ref=e142]
+            - cell "alpha" [ref=e143]
+            - cell "Stop Edit Delete" [ref=e144]:
+              - generic [ref=e145]:
+                - button "Stop" [ref=e146]
+                - button "Edit" [ref=e147]
+                - button "Delete" [ref=e148]
+          - row "TestAgent tester default idle — beta Stop Edit Delete" [ref=e171] [cursor=pointer]:
+            - cell "TestAgent" [ref=e172]:
+              - generic [ref=e174]: TestAgent
+            - cell "tester" [ref=e175]
+            - cell "default" [ref=e176]
+            - cell "idle" [ref=e177]:
+              - generic [ref=e178]: idle
+            - cell "—" [ref=e180]
+            - cell "beta" [ref=e181]
+            - cell "Stop Edit Delete" [ref=e182]:
+              - generic [ref=e183]:
+                - button "Stop" [ref=e184]
+                - button "Edit" [ref=e185]
+                - button "Delete" [ref=e186]

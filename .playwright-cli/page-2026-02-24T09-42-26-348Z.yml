@@ -1,0 +1,72 @@
+- generic [ref=e23]:
+  - generic [ref=e102]:
+    - button "◀" [ref=e103] [cursor=pointer]
+    - generic [ref=e105] [cursor=pointer]:
+      - generic [ref=e106]: Admin Configuration
+      - button "x" [ref=e107]
+    - button "▶" [ref=e108] [cursor=pointer]
+    - button "+" [ref=e109] [cursor=pointer]
+  - generic [ref=e24]:
+    - navigation "Main navigation" [ref=e25]:
+      - button "Dashboard" [active] [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: 📊
+      - button "Editor" [ref=e28] [cursor=pointer]:
+        - generic [ref=e29]: 📝
+      - button "Marketplace" [ref=e30] [cursor=pointer]:
+        - generic [ref=e31]: 🛒
+      - button "Templates" [ref=e32] [cursor=pointer]:
+        - generic [ref=e33]: 📄
+      - button "Environments" [ref=e34] [cursor=pointer]:
+        - generic [ref=e35]: ☁️
+      - button "Feature Flags" [ref=e36] [cursor=pointer]:
+        - generic [ref=e37]: flag
+      - button "Settings" [ref=e38] [cursor=pointer]:
+        - generic [ref=e39]: ⚙️
+      - generic [ref=e158]: WF
+      - button "Executions" [ref=e159] [cursor=pointer]:
+        - generic [ref=e160]: ▶️
+      - button "Logs" [ref=e161] [cursor=pointer]:
+        - generic [ref=e162]: 📃
+      - button "Events" [ref=e163] [cursor=pointer]:
+        - generic [ref=e164]: ⚡
+    - generic [ref=e7618]:
+      - heading "System Dashboard v1.0.0" [level=2] [ref=e7619]
+      - generic [ref=e7620]:
+        - generic [ref=e7621]:
+          - generic [ref=e7622]: "1"
+          - generic [ref=e7623]: Total Workflows
+        - generic [ref=e7624]:
+          - generic [ref=e7625]: "1"
+          - generic [ref=e7626]: Active Workflows
+        - generic [ref=e7627]:
+          - generic [ref=e7628]: "19"
+          - generic [ref=e7629]: Total Executions
+        - generic [ref=e7630]:
+          - generic [ref=e7631]: 0.0%
+          - generic [ref=e7632]: Error Rate
+      - heading "Workflows" [level=3] [ref=e7633]
+      - generic [ref=e7635] [cursor=pointer]:
+        - generic [ref=e7636]:
+          - generic [ref=e7637]:
+            - generic [ref=e7638]: Admin Configuration
+            - generic [ref=e7639]: active
+          - generic [ref=e7640]: 19 executions
+        - generic [ref=e7641]:
+          - button "Stop" [ref=e7642]
+          - button "View" [ref=e7643]
+      - heading "Execution Status Breakdown" [level=3] [ref=e7644]
+      - generic [ref=e7645]:
+        - generic [ref=e7646]:
+          - generic [ref=e7647]: Workflow
+          - generic [ref=e7648]: Pending
+          - generic [ref=e7649]: Running
+          - generic [ref=e7650]: Completed
+          - generic [ref=e7651]: Failed
+          - generic [ref=e7652]: Cancelled
+        - generic [ref=e7653]:
+          - generic [ref=e7654]: Admin Configuration
+          - generic [ref=e7655]: "0"
+          - generic [ref=e7656]: "2"
+          - generic [ref=e7657]: "17"
+          - generic [ref=e7658]: "0"
+          - generic [ref=e7659]: "0"

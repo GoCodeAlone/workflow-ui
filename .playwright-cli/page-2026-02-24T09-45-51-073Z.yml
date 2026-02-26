@@ -1,0 +1,57 @@
+- generic [ref=e21]:
+  - navigation "Main navigation" [ref=e22]:
+    - button "Dashboard" [ref=e23] [cursor=pointer]:
+      - generic [ref=e24]: 📊
+    - button "Editor" [ref=e25] [cursor=pointer]:
+      - generic [ref=e26]: 📝
+    - button "Marketplace" [ref=e27] [cursor=pointer]:
+      - generic [ref=e28]: 🛒
+    - button "Templates" [ref=e29] [cursor=pointer]:
+      - generic [ref=e30]: 📄
+    - button "Environments" [ref=e31] [cursor=pointer]:
+      - generic [ref=e32]: ☁️
+    - button "Feature Flags" [ref=e33] [cursor=pointer]:
+      - generic [ref=e34]: flag
+    - button "Settings" [ref=e35] [cursor=pointer]:
+      - generic [ref=e36]: ⚙️
+  - generic [ref=e37]:
+    - heading "System Dashboard v1.0.0" [level=2] [ref=e38]
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]: "1"
+        - generic [ref=e42]: Total Workflows
+      - generic [ref=e43]:
+        - generic [ref=e44]: "1"
+        - generic [ref=e45]: Active Workflows
+      - generic [ref=e46]:
+        - generic [ref=e47]: "49"
+        - generic [ref=e48]: Total Executions
+      - generic [ref=e49]:
+        - generic [ref=e50]: 0.0%
+        - generic [ref=e51]: Error Rate
+    - heading "Workflows" [level=3] [ref=e52]
+    - generic [ref=e54] [cursor=pointer]:
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - generic [ref=e57]: Admin Configuration
+          - generic [ref=e58]: active
+        - generic [ref=e59]: 49 executions
+      - generic [ref=e60]:
+        - button "Stop" [ref=e61]
+        - button "View" [ref=e62]
+    - heading "Execution Status Breakdown" [level=3] [ref=e63]
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - generic [ref=e66]: Workflow
+        - generic [ref=e67]: Pending
+        - generic [ref=e68]: Running
+        - generic [ref=e69]: Completed
+        - generic [ref=e70]: Failed
+        - generic [ref=e71]: Cancelled
+      - generic [ref=e72]:
+        - generic [ref=e73]: Admin Configuration
+        - generic [ref=e74]: "0"
+        - generic [ref=e75]: "2"
+        - generic [ref=e76]: "47"
+        - generic [ref=e77]: "0"
+        - generic [ref=e78]: "0"

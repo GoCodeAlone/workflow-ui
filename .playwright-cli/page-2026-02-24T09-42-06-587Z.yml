@@ -1,0 +1,42 @@
+- generic [ref=e23]:
+  - generic [ref=e102]:
+    - button "◀" [ref=e103] [cursor=pointer]
+    - generic [ref=e105] [cursor=pointer]:
+      - generic [ref=e106]: Admin Configuration
+      - button "x" [ref=e107]
+    - button "▶" [ref=e108] [cursor=pointer]
+    - button "+" [ref=e109] [cursor=pointer]
+  - generic [ref=e24]:
+    - navigation "Main navigation" [ref=e25]:
+      - button "Dashboard" [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: 📊
+      - button "Editor" [ref=e28] [cursor=pointer]:
+        - generic [ref=e29]: 📝
+      - button "Marketplace" [ref=e30] [cursor=pointer]:
+        - generic [ref=e31]: 🛒
+      - button "Templates" [ref=e32] [cursor=pointer]:
+        - generic [ref=e33]: 📄
+      - button "Environments" [ref=e34] [cursor=pointer]:
+        - generic [ref=e35]: ☁️
+      - button "Feature Flags" [active] [ref=e36] [cursor=pointer]:
+        - generic [ref=e37]: flag
+      - button "Settings" [ref=e38] [cursor=pointer]:
+        - generic [ref=e39]: ⚙️
+      - generic [ref=e158]: WF
+      - button "Executions" [ref=e159] [cursor=pointer]:
+        - generic [ref=e160]: ▶️
+      - button "Logs" [ref=e161] [cursor=pointer]:
+        - generic [ref=e162]: 📃
+      - button "Events" [ref=e163] [cursor=pointer]:
+        - generic [ref=e164]: ⚡
+    - generic [ref=e7607]:
+      - generic [ref=e7608]:
+        - generic [ref=e7609]:
+          - heading "Feature Flags" [level=2] [ref=e7610]
+          - paragraph [ref=e7611]: Manage feature flags, targeting rules, and overrides.
+        - button "+ Create Flag" [ref=e7612] [cursor=pointer]
+      - generic [ref=e7613]:
+        - textbox "Search flags..." [ref=e7614]
+        - button "Refresh" [ref=e7615] [cursor=pointer]
+        - generic [ref=e7616]: 0 flags
+      - generic [ref=e7617]: No feature flags yet. Create one to get started.

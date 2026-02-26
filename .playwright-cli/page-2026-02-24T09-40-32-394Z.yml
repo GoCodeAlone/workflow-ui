@@ -1,0 +1,77 @@
+- generic [ref=e23]:
+  - generic [ref=e82]:
+    - generic [ref=e83]: Workflow Editor
+    - button "Import" [ref=e84] [cursor=pointer]
+    - button "Load Server" [ref=e85] [cursor=pointer]
+    - button "From Path" [ref=e86] [cursor=pointer]
+    - button "Export YAML" [disabled] [ref=e87]
+    - button "Save" [disabled] [ref=e88]
+    - button "Validate" [disabled] [ref=e89]
+    - button "Undo" [disabled] [ref=e91]
+    - button "Redo" [disabled] [ref=e92]
+    - button "AI Copilot" [ref=e94] [cursor=pointer]
+    - button "Components" [ref=e95] [cursor=pointer]
+    - button "Container View" [disabled] [ref=e97]
+    - button "Auto Layout" [disabled] [ref=e98]
+    - button "Auto-group" [disabled] [ref=e99]
+    - generic [ref=e100]: 0 modules
+    - button "Clear" [disabled] [ref=e101]
+  - generic [ref=e102]:
+    - button "◀" [ref=e103] [cursor=pointer]
+    - generic [ref=e105] [cursor=pointer]:
+      - generic [ref=e106]: Workflow 1
+      - button "x" [ref=e107]
+    - button "▶" [ref=e108] [cursor=pointer]
+    - button "+" [ref=e109] [cursor=pointer]
+  - generic [ref=e24]:
+    - navigation "Main navigation" [ref=e25]:
+      - button "Dashboard" [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: 📊
+      - button "Editor" [active] [ref=e28] [cursor=pointer]:
+        - generic [ref=e29]: 📝
+      - button "Marketplace" [ref=e30] [cursor=pointer]:
+        - generic [ref=e31]: 🛒
+      - button "Templates" [ref=e32] [cursor=pointer]:
+        - generic [ref=e33]: 📄
+      - button "Environments" [ref=e34] [cursor=pointer]:
+        - generic [ref=e35]: ☁️
+      - button "Feature Flags" [ref=e36] [cursor=pointer]:
+        - generic [ref=e37]: flag
+      - button "Settings" [ref=e38] [cursor=pointer]:
+        - generic [ref=e39]: ⚙️
+    - generic [ref=e110]:
+      - generic [ref=e113]:
+        - generic [ref=e114] [cursor=pointer]:
+          - generic [ref=e115]: 📋
+          - text: All Workflows
+        - generic [ref=e116]:
+          - generic [ref=e117]: Companies
+          - button "+" [ref=e118] [cursor=pointer]
+        - generic [ref=e119]:
+          - generic [ref=e121] [cursor=pointer]:
+            - generic [ref=e122]: ▶
+            - generic "System (Admin Only)" [ref=e123]: 🔒 System (Admin Only)
+          - generic [ref=e125] [cursor=pointer]:
+            - generic [ref=e126]: ▶
+            - generic "System (Admin Only)" [ref=e127]: 🔒 System (Admin Only)
+      - generic "Drag to resize" [ref=e128]
+      - button "▶" [ref=e129] [cursor=pointer]:
+        - generic [ref=e134]: ▶
+    - generic [ref=e135]:
+      - generic [ref=e136]:
+        - heading "All Workflows" [level=2] [ref=e137]
+        - textbox "Filter workflows..." [ref=e138]
+        - button "From Server Path" [ref=e139] [cursor=pointer]
+        - button "New Workflow" [ref=e140] [cursor=pointer]
+      - generic [ref=e143]:
+        - generic [ref=e144] [cursor=pointer]:
+          - generic [ref=e145]:
+            - generic "System workflow" [ref=e146]: 🛡
+            - text: Admin Configuration
+            - generic [ref=e147]: v1
+          - generic [ref=e148]: 2/24/2026 · Admin Configuration
+        - generic "System Administration" [ref=e149]
+        - generic [ref=e150]: active
+        - generic [ref=e151]:
+          - button "■" [ref=e152] [cursor=pointer]
+          - button "✎" [ref=e153] [cursor=pointer]

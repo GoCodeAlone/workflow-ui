@@ -1,0 +1,104 @@
+- generic [ref=e23]:
+  - generic [ref=e102]:
+    - button "◀" [ref=e103] [cursor=pointer]
+    - generic [ref=e105] [cursor=pointer]:
+      - generic [ref=e106]: Admin Configuration
+      - button "x" [ref=e107]
+    - button "▶" [ref=e108] [cursor=pointer]
+    - button "+" [ref=e109] [cursor=pointer]
+  - generic [ref=e24]:
+    - navigation "Main navigation" [ref=e25]:
+      - button "Dashboard" [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: 📊
+      - button "Editor" [ref=e28] [cursor=pointer]:
+        - generic [ref=e29]: 📝
+      - button "Marketplace" [active] [ref=e30] [cursor=pointer]:
+        - generic [ref=e31]: 🛒
+      - button "Templates" [ref=e32] [cursor=pointer]:
+        - generic [ref=e33]: 📄
+      - button "Environments" [ref=e34] [cursor=pointer]:
+        - generic [ref=e35]: ☁️
+      - button "Feature Flags" [ref=e36] [cursor=pointer]:
+        - generic [ref=e37]: flag
+      - button "Settings" [ref=e38] [cursor=pointer]:
+        - generic [ref=e39]: ⚙️
+      - generic [ref=e158]: WF
+      - button "Executions" [ref=e159] [cursor=pointer]:
+        - generic [ref=e160]: ▶️
+      - button "Logs" [ref=e161] [cursor=pointer]:
+        - generic [ref=e162]: 📃
+      - button "Events" [ref=e163] [cursor=pointer]:
+        - generic [ref=e164]: ⚡
+    - generic [ref=e7209]:
+      - heading "Plugin Marketplace" [level=2] [ref=e7210]
+      - paragraph [ref=e7211]: Enable and disable plugins to customize your workflow engine.
+      - generic [ref=e7212]:
+        - button "Enabled (8)" [ref=e7213] [cursor=pointer]
+        - button "Available (0)" [ref=e7214] [cursor=pointer]
+      - textbox "Filter enabled plugins..." [ref=e7216]
+      - generic [ref=e7217]: Showing 8 plugins
+      - generic [ref=e7218]:
+        - generic [ref=e7219] [cursor=pointer]:
+          - generic [ref=e7220]:
+            - generic [ref=e7221]:
+              - generic [ref=e7222]: admin-core
+              - generic [ref=e7223]: v1.0.0
+            - generic [ref=e7224]: Enabled
+          - generic [ref=e7225]: "Core admin UI views: Dashboard, Editor, Executions, Logs, Events, Marketplace, Templates, Environments, Settings"
+          - button "Disable" [ref=e7227]
+        - generic [ref=e7228] [cursor=pointer]:
+          - generic [ref=e7229]:
+            - generic [ref=e7230]:
+              - generic [ref=e7231]: aws
+              - generic [ref=e7232]: v1.0.0
+            - generic [ref=e7233]: Enabled
+          - generic [ref=e7234]: AWS Cloud Provider (EC2, ECS, EKS, ECR)
+          - button "Disable" [ref=e7236]
+        - generic [ref=e7237] [cursor=pointer]:
+          - generic [ref=e7238]:
+            - generic [ref=e7239]:
+              - generic [ref=e7240]: azure
+              - generic [ref=e7241]: v1.0.0
+            - generic [ref=e7242]: Enabled
+          - generic [ref=e7243]: Azure Cloud Provider (AKS, ACI, ACR)
+          - button "Disable" [ref=e7245]
+        - generic [ref=e7246] [cursor=pointer]:
+          - generic [ref=e7247]:
+            - generic [ref=e7248]:
+              - generic [ref=e7249]: digitalocean
+              - generic [ref=e7250]: v1.0.0
+            - generic [ref=e7251]: Enabled
+          - generic [ref=e7252]: DigitalOcean Cloud Provider (DOKS, App Platform)
+          - button "Disable" [ref=e7254]
+        - generic [ref=e7255] [cursor=pointer]:
+          - generic [ref=e7256]:
+            - generic [ref=e7257]:
+              - generic [ref=e7258]: doc-manager
+              - generic [ref=e7259]: v1.0.0
+            - generic [ref=e7260]: Enabled
+          - generic [ref=e7261]: Create and manage markdown documentation for workflows
+          - button "Disable" [ref=e7263]
+        - generic [ref=e7264] [cursor=pointer]:
+          - generic [ref=e7265]:
+            - generic [ref=e7266]:
+              - generic [ref=e7267]: feature-flags
+              - generic [ref=e7268]: v1.0.0
+            - generic [ref=e7269]: Enabled
+          - generic [ref=e7270]: Feature flag service module and pipeline steps (feature_flag, ff_gate)
+          - button "Disable" [ref=e7272]
+        - generic [ref=e7273] [cursor=pointer]:
+          - generic [ref=e7274]:
+            - generic [ref=e7275]:
+              - generic [ref=e7276]: gcp
+              - generic [ref=e7277]: v1.0.0
+            - generic [ref=e7278]: Enabled
+          - generic [ref=e7279]: GCP Cloud Provider (GKE, Cloud Run, GCR)
+          - button "Disable" [ref=e7281]
+        - generic [ref=e7282] [cursor=pointer]:
+          - generic [ref=e7283]:
+            - generic [ref=e7284]:
+              - generic [ref=e7285]: store-browser
+              - generic [ref=e7286]: v1.0.0
+            - generic [ref=e7287]: Enabled
+          - generic [ref=e7288]: Browse database tables, events, and DLQ entries
+          - button "Disable" [ref=e7290]

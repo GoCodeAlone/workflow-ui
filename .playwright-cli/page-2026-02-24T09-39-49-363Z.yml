@@ -1,0 +1,64 @@
+- generic [ref=e17]:
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - heading "Ratchet" [level=2] [ref=e20]
+      - paragraph [ref=e21]: AI Agent Platform
+    - navigation [ref=e22]:
+      - button "[D] Dashboard" [ref=e23] [cursor=pointer]:
+        - generic [ref=e24]: "[D]"
+        - text: Dashboard
+      - button "[A] Agents" [ref=e25] [cursor=pointer]:
+        - generic [ref=e26]: "[A]"
+        - text: Agents
+      - button "[T] Tasks" [ref=e27] [cursor=pointer]:
+        - generic [ref=e28]: "[T]"
+        - text: Tasks
+      - button "[M] Messages" [ref=e29] [cursor=pointer]:
+        - generic [ref=e30]: "[M]"
+        - text: Messages
+      - button "[P] Projects" [ref=e31] [cursor=pointer]:
+        - generic [ref=e32]: "[P]"
+        - text: Projects
+      - button "[K] Skills" [ref=e33] [cursor=pointer]:
+        - generic [ref=e34]: "[K]"
+        - text: Skills
+      - button "[S] Settings" [ref=e35] [cursor=pointer]:
+        - generic [ref=e36]: "[S]"
+        - text: Settings
+    - generic [ref=e37]:
+      - generic [ref=e38]: admin
+      - button "Sign Out" [ref=e39] [cursor=pointer]
+  - generic [ref=e40]:
+    - heading "Dashboard" [level=3] [ref=e42]
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]: "3"
+          - generic [ref=e48]: Total Agents
+        - generic [ref=e49]:
+          - generic [ref=e50]: "0"
+          - generic [ref=e51]: Active Agents
+        - generic [ref=e52]:
+          - generic [ref=e53]: "0"
+          - generic [ref=e54]: Pending Tasks
+        - generic [ref=e55]:
+          - generic [ref=e56]: "0"
+          - generic [ref=e57]: Completed Tasks
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - heading "Team Health" [level=3] [ref=e60]
+          - generic [ref=e61]:
+            - generic [ref=e62]:
+              - generic [ref=e64]: Orchestrator
+              - generic [ref=e65]: lead
+            - generic [ref=e66]: idle
+          - generic [ref=e67]:
+            - generic [ref=e70]: Developer
+            - generic [ref=e71]: idle
+          - generic [ref=e72]:
+            - generic [ref=e75]: Reviewer
+            - generic [ref=e76]: idle
+          - button "View all agents →" [ref=e77] [cursor=pointer]
+        - generic [ref=e78]:
+          - heading "Recent Activity" [level=3] [ref=e79]
+          - paragraph [ref=e80]: No tasks yet

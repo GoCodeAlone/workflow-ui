@@ -1,0 +1,57 @@
+- generic [ref=e24]:
+  - navigation "Main navigation" [ref=e25]:
+    - button "Dashboard" [ref=e26] [cursor=pointer]:
+      - generic [ref=e27]: 📊
+    - button "Editor" [ref=e28] [cursor=pointer]:
+      - generic [ref=e29]: 📝
+    - button "Marketplace" [ref=e30] [cursor=pointer]:
+      - generic [ref=e31]: 🛒
+    - button "Templates" [ref=e32] [cursor=pointer]:
+      - generic [ref=e33]: 📄
+    - button "Environments" [ref=e34] [cursor=pointer]:
+      - generic [ref=e35]: ☁️
+    - button "Feature Flags" [ref=e36] [cursor=pointer]:
+      - generic [ref=e37]: flag
+    - button "Settings" [ref=e38] [cursor=pointer]:
+      - generic [ref=e39]: ⚙️
+  - generic [ref=e40]:
+    - heading "System Dashboard v1.0.0" [level=2] [ref=e41]
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - generic [ref=e44]: "1"
+        - generic [ref=e45]: Total Workflows
+      - generic [ref=e46]:
+        - generic [ref=e47]: "1"
+        - generic [ref=e48]: Active Workflows
+      - generic [ref=e49]:
+        - generic [ref=e50]: "4"
+        - generic [ref=e51]: Total Executions
+      - generic [ref=e52]:
+        - generic [ref=e53]: 0.0%
+        - generic [ref=e54]: Error Rate
+    - heading "Workflows" [level=3] [ref=e55]
+    - generic [ref=e57] [cursor=pointer]:
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - generic [ref=e60]: Admin Configuration
+          - generic [ref=e61]: active
+        - generic [ref=e62]: 4 executions
+      - generic [ref=e63]:
+        - button "Stop" [ref=e64]
+        - button "View" [ref=e65]
+    - heading "Execution Status Breakdown" [level=3] [ref=e66]
+    - generic [ref=e67]:
+      - generic [ref=e68]:
+        - generic [ref=e69]: Workflow
+        - generic [ref=e70]: Pending
+        - generic [ref=e71]: Running
+        - generic [ref=e72]: Completed
+        - generic [ref=e73]: Failed
+        - generic [ref=e74]: Cancelled
+      - generic [ref=e75]:
+        - generic [ref=e76]: Admin Configuration
+        - generic [ref=e77]: "0"
+        - generic [ref=e78]: "2"
+        - generic [ref=e79]: "2"
+        - generic [ref=e80]: "0"
+        - generic [ref=e81]: "0"

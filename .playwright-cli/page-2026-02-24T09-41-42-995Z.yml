@@ -1,0 +1,256 @@
+- generic [ref=e23]:
+  - generic [ref=e102]:
+    - button "◀" [ref=e103] [cursor=pointer]
+    - generic [ref=e105] [cursor=pointer]:
+      - generic [ref=e106]: Admin Configuration
+      - button "x" [ref=e107]
+    - button "▶" [ref=e108] [cursor=pointer]
+    - button "+" [ref=e109] [cursor=pointer]
+  - generic [ref=e24]:
+    - navigation "Main navigation" [ref=e25]:
+      - button "Dashboard" [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: 📊
+      - button "Editor" [ref=e28] [cursor=pointer]:
+        - generic [ref=e29]: 📝
+      - button "Marketplace" [ref=e30] [cursor=pointer]:
+        - generic [ref=e31]: 🛒
+      - button "Templates" [active] [ref=e32] [cursor=pointer]:
+        - generic [ref=e33]: 📄
+      - button "Environments" [ref=e34] [cursor=pointer]:
+        - generic [ref=e35]: ☁️
+      - button "Feature Flags" [ref=e36] [cursor=pointer]:
+        - generic [ref=e37]: flag
+      - button "Settings" [ref=e38] [cursor=pointer]:
+        - generic [ref=e39]: ⚙️
+      - generic [ref=e158]: WF
+      - button "Executions" [ref=e159] [cursor=pointer]:
+        - generic [ref=e160]: ▶️
+      - button "Logs" [ref=e161] [cursor=pointer]:
+        - generic [ref=e162]: 📃
+      - button "Events" [ref=e163] [cursor=pointer]:
+        - generic [ref=e164]: ⚡
+    - generic [ref=e7340]:
+      - heading "Template Gallery" [level=2] [ref=e7341]
+      - paragraph [ref=e7342]: Start with a pre-built workflow template and customize it for your needs.
+      - generic [ref=e7343]:
+        - combobox [ref=e7344] [cursor=pointer]:
+          - option "All Complexities" [selected]
+          - option "Simple"
+          - option "Intermediate"
+          - option "Advanced"
+        - combobox [ref=e7345] [cursor=pointer]:
+          - option "All Tags" [selected]
+          - option "HTTP"
+          - option "Pipeline"
+          - option "Event-Driven"
+          - option "CRON"
+          - option "WebSocket"
+          - option "Database"
+          - option "AI"
+          - option "Integration"
+          - option "State Machine"
+          - option "Monitoring"
+      - generic [ref=e7346]: Showing 22 templates
+      - generic [ref=e7347]:
+        - generic [ref=e7349] [cursor=pointer]:
+          - generic [ref=e7350]:
+            - generic [ref=e7351]: REST API Gateway
+            - generic [ref=e7352]: Intermediate
+          - generic [ref=e7353]: A complete REST API with CRUD endpoints, input validation, authentication middleware, and database persistence. Includes health check and metrics endpoints.
+          - generic [ref=e7354]:
+            - generic [ref=e7355]: HTTP
+            - generic [ref=e7356]: Database
+          - button "Use Template" [ref=e7358]
+        - generic [ref=e7360] [cursor=pointer]:
+          - generic [ref=e7361]:
+            - generic [ref=e7362]: Event Processing Pipeline
+            - generic [ref=e7363]: Advanced
+          - generic [ref=e7364]: An event-driven pipeline that consumes messages from an event bus, transforms data through multiple stages, and publishes results. Includes dead letter queue handling.
+          - generic [ref=e7365]:
+            - generic [ref=e7366]: Event-Driven
+            - generic [ref=e7367]: Pipeline
+          - button "Use Template" [ref=e7369]
+        - generic [ref=e7371] [cursor=pointer]:
+          - generic [ref=e7372]:
+            - generic [ref=e7373]: Scheduled CRON Job
+            - generic [ref=e7374]: Simple
+          - generic [ref=e7375]: A scheduled workflow that runs at configurable intervals. Fetches data from an API, processes it, and sends summary reports via email or Slack.
+          - generic [ref=e7376]:
+            - generic [ref=e7377]: CRON
+            - generic [ref=e7378]: HTTP
+          - button "Use Template" [ref=e7380]
+        - generic [ref=e7382] [cursor=pointer]:
+          - generic [ref=e7383]:
+            - generic [ref=e7384]: Chat Application
+            - generic [ref=e7385]: Advanced
+          - generic [ref=e7386]: A real-time chat application using WebSocket connections, with message persistence, user presence tracking, and AI-powered auto-moderation.
+          - generic [ref=e7387]:
+            - generic [ref=e7388]: WebSocket
+            - generic [ref=e7389]: Event-Driven
+            - generic [ref=e7390]: AI
+          - button "Use Template" [ref=e7392]
+        - generic [ref=e7394] [cursor=pointer]:
+          - generic [ref=e7395]:
+            - generic [ref=e7396]: E-commerce Order Flow
+            - generic [ref=e7397]: Advanced
+          - generic [ref=e7398]: Complete order processing pipeline with inventory check, payment processing, order confirmation, shipping label generation, and email notifications.
+          - generic [ref=e7399]:
+            - generic [ref=e7400]: HTTP
+            - generic [ref=e7401]: Pipeline
+            - generic [ref=e7402]: Event-Driven
+          - button "Use Template" [ref=e7404]
+        - generic [ref=e7406] [cursor=pointer]:
+          - generic [ref=e7407]:
+            - generic [ref=e7408]: Data ETL Pipeline
+            - generic [ref=e7409]: Intermediate
+          - generic [ref=e7410]: Extract-Transform-Load pipeline that reads from multiple data sources, applies transformations and aggregations, and loads into a data warehouse.
+          - generic [ref=e7411]:
+            - generic [ref=e7412]: Pipeline
+            - generic [ref=e7413]: Database
+          - button "Use Template" [ref=e7415]
+        - generic [ref=e7417] [cursor=pointer]:
+          - generic [ref=e7418]:
+            - generic [ref=e7419]: Webhook Processor
+            - generic [ref=e7420]: Simple
+          - generic [ref=e7421]: Receives webhooks from external services (GitHub, Stripe, Twilio), validates signatures, routes by event type, and triggers appropriate workflow actions.
+          - generic [ref=e7422]:
+            - generic [ref=e7423]: HTTP
+            - generic [ref=e7424]: Event-Driven
+          - button "Use Template" [ref=e7426]
+        - generic [ref=e7428] [cursor=pointer]:
+          - generic [ref=e7429]:
+            - generic [ref=e7430]: Multi-Service Integration
+            - generic [ref=e7431]: Advanced
+          - generic [ref=e7432]: Orchestrates communication between multiple microservices with retry logic, circuit breakers, and distributed tracing. Includes health monitoring for all services.
+          - generic [ref=e7433]:
+            - generic [ref=e7434]: HTTP
+            - generic [ref=e7435]: Integration
+            - generic [ref=e7436]: Pipeline
+          - button "Use Template" [ref=e7438]
+        - generic [ref=e7440] [cursor=pointer]:
+          - generic [ref=e7441]:
+            - generic [ref=e7442]: AI-Powered Assistant
+            - generic [ref=e7443]: Intermediate
+          - generic [ref=e7444]: Conversational AI assistant with tool use, context management, and multi-turn dialogue. Integrates with knowledge base for RAG-powered responses.
+          - generic [ref=e7445]:
+            - generic [ref=e7446]: AI
+            - generic [ref=e7447]: HTTP
+            - generic [ref=e7448]: Database
+          - button "Use Template" [ref=e7450]
+        - generic [ref=e7452] [cursor=pointer]:
+          - generic [ref=e7453]:
+            - generic [ref=e7454]: State Machine Order Processor
+            - generic [ref=e7455]: Advanced
+          - generic [ref=e7456]: Order lifecycle management using a state machine engine. Tracks orders through created, validated, paid, shipped, and delivered states with configurable transitions and guards.
+          - generic [ref=e7457]:
+            - generic [ref=e7458]: State Machine
+            - generic [ref=e7459]: Pipeline
+          - button "Use Template" [ref=e7461]
+        - generic [ref=e7463] [cursor=pointer]:
+          - generic [ref=e7464]:
+            - generic [ref=e7465]: CDC Data Sync
+            - generic [ref=e7466]: Intermediate
+          - generic [ref=e7467]: Change data capture pipeline that listens for PostgreSQL changes, transforms records, and syncs them to an analytics database in near real-time.
+          - generic [ref=e7468]:
+            - generic [ref=e7469]: Database
+            - generic [ref=e7470]: Event-Driven
+          - button "Use Template" [ref=e7472]
+        - generic [ref=e7474] [cursor=pointer]:
+          - generic [ref=e7475]:
+            - generic [ref=e7476]: API Rate Limiter Gateway
+            - generic [ref=e7477]: Simple
+          - generic [ref=e7478]: HTTP gateway with built-in rate limiting per client IP, CORS middleware, and request logging. Proxies validated requests to upstream services.
+          - generic [ref=e7480]: HTTP
+          - button "Use Template" [ref=e7482]
+        - generic [ref=e7484] [cursor=pointer]:
+          - generic [ref=e7485]:
+            - generic [ref=e7486]: Real-Time Monitoring Dashboard
+            - generic [ref=e7487]: Intermediate
+          - generic [ref=e7488]: Metrics collection service with health checks, Prometheus-compatible endpoints, and configurable alerting thresholds. Monitors upstream services and reports status.
+          - generic [ref=e7489]:
+            - generic [ref=e7490]: Monitoring
+            - generic [ref=e7491]: HTTP
+          - button "Use Template" [ref=e7493]
+        - generic [ref=e7495] [cursor=pointer]:
+          - generic [ref=e7496]:
+            - generic [ref=e7497]: Saga Travel Booking
+            - generic [ref=e7498]: Advanced
+          - generic [ref=e7499]: Distributed saga pattern for travel booking that coordinates flight, hotel, and car rental reservations. Includes compensation logic to roll back on partial failures.
+          - generic [ref=e7500]:
+            - generic [ref=e7501]: Pipeline
+            - generic [ref=e7502]: Integration
+          - button "Use Template" [ref=e7504]
+        - generic [ref=e7506] [cursor=pointer]:
+          - generic [ref=e7507]:
+            - generic [ref=e7508]: Message Queue Consumer
+            - generic [ref=e7509]: Intermediate
+          - generic [ref=e7510]: Kafka message consumer with configurable consumer groups, automatic retries with exponential backoff, and dead letter queue routing for failed messages.
+          - generic [ref=e7511]:
+            - generic [ref=e7512]: Event-Driven
+            - generic [ref=e7513]: Pipeline
+          - button "Use Template" [ref=e7515]
+        - generic [ref=e7517] [cursor=pointer]:
+          - generic [ref=e7518]:
+            - generic [ref=e7519]: Authentication Service
+            - generic [ref=e7520]: Intermediate
+          - generic [ref=e7521]: JWT-based authentication service with user registration, login, and token refresh endpoints. Passwords are hashed with bcrypt and tokens stored in a database.
+          - generic [ref=e7522]:
+            - generic [ref=e7523]: HTTP
+            - generic [ref=e7524]: Database
+          - button "Use Template" [ref=e7526]
+        - generic [ref=e7528] [cursor=pointer]:
+          - generic [ref=e7529]:
+            - generic [ref=e7530]: File Processing Pipeline
+            - generic [ref=e7531]: Intermediate
+          - generic [ref=e7532]: "Processes uploaded files through a multi-stage pipeline: receive via HTTP, validate format, apply transformations, and store results in a database with S3 archival."
+          - generic [ref=e7533]:
+            - generic [ref=e7534]: Pipeline
+            - generic [ref=e7535]: Database
+          - button "Use Template" [ref=e7537]
+        - generic [ref=e7539] [cursor=pointer]:
+          - generic [ref=e7540]:
+            - generic [ref=e7541]: Multi-Tenant SaaS Backend
+            - generic [ref=e7542]: Advanced
+          - generic [ref=e7543]: Multi-tenant backend with company, organization, and project hierarchy. Includes role-based access control, tenant-scoped data isolation, and admin management APIs.
+          - generic [ref=e7544]:
+            - generic [ref=e7545]: HTTP
+            - generic [ref=e7546]: Database
+          - button "Use Template" [ref=e7548]
+        - generic [ref=e7550] [cursor=pointer]:
+          - generic [ref=e7551]:
+            - generic [ref=e7552]: IoT Device Telemetry
+            - generic [ref=e7553]: Intermediate
+          - generic [ref=e7554]: Ingests telemetry data from IoT devices, stores time-series readings, computes rolling aggregates, and triggers alerts when thresholds are exceeded.
+          - generic [ref=e7555]:
+            - generic [ref=e7556]: Event-Driven
+            - generic [ref=e7557]: Database
+            - generic [ref=e7558]: Monitoring
+          - button "Use Template" [ref=e7560]
+        - generic [ref=e7562] [cursor=pointer]:
+          - generic [ref=e7563]:
+            - generic [ref=e7564]: Content Management API
+            - generic [ref=e7565]: Simple
+          - generic [ref=e7566]: Blog and CMS REST API with full CRUD operations, content versioning, and draft/publish workflow. Supports categories and tag-based filtering.
+          - generic [ref=e7567]:
+            - generic [ref=e7568]: HTTP
+            - generic [ref=e7569]: Database
+          - button "Use Template" [ref=e7571]
+        - generic [ref=e7573] [cursor=pointer]:
+          - generic [ref=e7574]:
+            - generic [ref=e7575]: Notification Hub
+            - generic [ref=e7576]: Simple
+          - generic [ref=e7577]: Multi-channel notification dispatch service that routes messages to email, SMS, Slack, and push notification providers based on user preferences and event type.
+          - generic [ref=e7578]:
+            - generic [ref=e7579]: Event-Driven
+            - generic [ref=e7580]: Integration
+          - button "Use Template" [ref=e7582]
+        - generic [ref=e7584] [cursor=pointer]:
+          - generic [ref=e7585]:
+            - generic [ref=e7586]: Search Indexer Pipeline
+            - generic [ref=e7587]: Intermediate
+          - generic [ref=e7588]: CDC-powered search indexing pipeline that captures database changes, applies JQ transforms to shape documents, and upserts them into a search index for full-text queries.
+          - generic [ref=e7589]:
+            - generic [ref=e7590]: Pipeline
+            - generic [ref=e7591]: Event-Driven
+            - generic [ref=e7592]: Database
+          - button "Use Template" [ref=e7594]

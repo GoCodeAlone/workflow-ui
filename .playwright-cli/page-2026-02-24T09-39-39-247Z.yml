@@ -1,0 +1,13 @@
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - heading "Ratchet" [level=1] [ref=e6]
+    - paragraph [ref=e7]: AI Agent Mission Control
+  - generic [ref=e16]: "HTTP 401: {\"error\":\"invalid credentials\"}"
+  - generic [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]: Username
+      - textbox "admin" [ref=e11]: wronguser
+    - generic [ref=e12]:
+      - generic [ref=e13]: Password
+      - textbox "••••••••" [ref=e14]: wrongpass
+    - button "Sign In" [ref=e15] [cursor=pointer]
