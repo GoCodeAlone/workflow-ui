@@ -10,7 +10,7 @@ export interface LoginPageProps {
   usernameLabel?: string;
   /** Input type for the username field. Default: 'text' */
   usernameType?: string;
-  /** Placeholder for the username field. Default: 'admin' */
+  /** Placeholder for the username field. Default: 'Enter username' */
   usernamePlaceholder?: string;
   /** Login handler. Called with (username, password). */
   onLogin: (username: string, password: string) => Promise<void>;
@@ -25,7 +25,7 @@ export default function LoginPage({
   subtitle,
   usernameLabel = 'Username',
   usernameType = 'text',
-  usernamePlaceholder = 'admin',
+  usernamePlaceholder = 'Enter username',
   onLogin,
   error,
   style,

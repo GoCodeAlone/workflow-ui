@@ -36,8 +36,6 @@ export type {
   StatusBadgeSize,
   DataTableProps,
   DataTableColumn,
-  SortState,
-  SortDirection,
   ModalProps,
   ModalAction,
   LoadingSpinnerProps,

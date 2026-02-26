@@ -9,6 +9,13 @@ export interface BaseUser {
   [key: string]: unknown;
 }
 
+/** Storage adapter for persisting auth tokens. */
+export interface StorageAdapter {
+  getItem(key: string): string | null;
+  setItem(key: string, value: string): void;
+  removeItem(key: string): void;
+}
+
 export interface BaseAuthState {
   token: string | null;
   user: BaseUser | null;
@@ -31,7 +38,7 @@ export interface AuthStoreConfig {
    * Default: expects { token: string, user?: BaseUser }
    */
   parseLoginResponse?: (data: unknown) => { token: string; user?: BaseUser };
-  /** Token key in localStorage. Default: 'auth_token' */
+  /** Token key in storage. Default: 'auth_token' */
   tokenKey?: string;
   /** Called after logout (e.g., fire-and-forget server call). */
   onLogout?: (token: string | null) => void;
@@ -40,6 +47,8 @@ export interface AuthStoreConfig {
    * Default: { username, password }
    */
   buildLoginBody?: (username: string, password: string) => unknown;
+  /** Storage adapter for persisting tokens. Default: localStorage */
+  storage?: StorageAdapter;
 }
 
 /**
@@ -65,11 +74,12 @@ export function createAuthStore(config?: AuthStoreConfig) {
     token: data.token as string,
     user: data.user as BaseUser | undefined,
   }));
+  const storage = config?.storage ?? localStorage;
 
   return create<BaseAuthState>((set) => ({
-    token: localStorage.getItem(tokenKey),
+    token: storage.getItem(tokenKey),
     user: null,
-    isAuthenticated: !!localStorage.getItem(tokenKey),
+    isAuthenticated: !!storage.getItem(tokenKey),
     isLoading: false,
     error: null,
 
@@ -78,7 +88,7 @@ export function createAuthStore(config?: AuthStoreConfig) {
       try {
         const res = await apiPost(loginPath, buildBody(username, password));
         const { token, user } = parseLogin(res);
-        localStorage.setItem(tokenKey, token);
+        storage.setItem(tokenKey, token);
         set({ token, user: user ?? null, isAuthenticated: true, isLoading: false, error: null });
       } catch (err) {
         const msg = err instanceof Error ? err.message : 'Login failed';
@@ -88,9 +98,9 @@ export function createAuthStore(config?: AuthStoreConfig) {
     },
 
     logout: () => {
-      const token = localStorage.getItem(tokenKey);
+      const token = storage.getItem(tokenKey);
       if (config?.onLogout) config.onLogout(token);
-      localStorage.removeItem(tokenKey);
+      storage.removeItem(tokenKey);
       set({ token: null, user: null, isAuthenticated: false, error: null });
     },
 
@@ -99,7 +109,7 @@ export function createAuthStore(config?: AuthStoreConfig) {
         const user = await apiGet<BaseUser>(mePath);
         set({ user, isAuthenticated: true });
       } catch {
-        localStorage.removeItem(tokenKey);
+        storage.removeItem(tokenKey);
         set({ token: null, user: null, isAuthenticated: false });
       }
     },

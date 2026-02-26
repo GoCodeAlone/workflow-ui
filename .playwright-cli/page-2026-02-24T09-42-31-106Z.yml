@@ -1,0 +1,115 @@
+- generic [ref=e17]:
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - heading "Ratchet" [level=2] [ref=e20]
+      - paragraph [ref=e21]: AI Agent Platform
+    - navigation [ref=e22]:
+      - button "[D] Dashboard" [ref=e23] [cursor=pointer]:
+        - generic [ref=e24]: "[D]"
+        - text: Dashboard
+      - button "[A] Agents" [ref=e25] [cursor=pointer]:
+        - generic [ref=e26]: "[A]"
+        - text: Agents
+      - button "[T] Tasks" [ref=e27] [cursor=pointer]:
+        - generic [ref=e28]: "[T]"
+        - text: Tasks
+      - button "[M] Messages" [ref=e29] [cursor=pointer]:
+        - generic [ref=e30]: "[M]"
+        - text: Messages
+      - button "[P] Projects" [ref=e31] [cursor=pointer]:
+        - generic [ref=e32]: "[P]"
+        - text: Projects
+      - button "[K] Skills" [ref=e33] [cursor=pointer]:
+        - generic [ref=e34]: "[K]"
+        - text: Skills
+      - button "[S] Settings" [active] [ref=e35] [cursor=pointer]:
+        - generic [ref=e36]: "[S]"
+        - text: Settings
+    - generic [ref=e37]:
+      - generic [ref=e38]: admin
+      - button "Sign Out" [ref=e39] [cursor=pointer]
+  - generic [ref=e40]:
+    - heading "Settings" [level=3] [ref=e253]
+    - generic [ref=e254]:
+      - generic [ref=e255]:
+        - heading "Server Info" [level=3] [ref=e256]
+        - generic [ref=e257]:
+          - generic [ref=e258]: Version
+          - generic [ref=e259]: 1.0.0
+        - generic [ref=e260]:
+          - generic [ref=e261]: Uptime
+          - generic [ref=e262]: running
+        - generic [ref=e263]:
+          - generic [ref=e264]: Agents
+          - generic [ref=e265]: "4"
+        - generic [ref=e266]:
+          - generic [ref=e267]: Teams
+          - generic [ref=e268]: "2"
+      - generic [ref=e269]:
+        - heading "Plugins" [level=3] [ref=e270]
+        - generic [ref=e271]:
+          - generic [ref=e272]: ratchet.ai_provider
+          - generic [ref=e273]: ratchet.sse_hub
+          - generic [ref=e274]: ratchet.scheduler
+          - generic [ref=e275]: ratchet.mcp_client
+          - generic [ref=e276]: ratchet.mcp_server
+          - generic [ref=e277]: ratchet.db_init
+          - generic [ref=e278]: step.agent_execute
+          - generic [ref=e279]: step.workspace_init
+      - generic [ref=e280]:
+        - heading "Vault Settings" [level=3] [ref=e281]
+        - generic [ref=e283]:
+          - generic [ref=e284]: Backend
+          - generic [ref=e285]: file
+        - generic [ref=e286]:
+          - generic [ref=e287]: Remote Vault Configuration
+          - textbox "Vault Address (e.g. https://vault.example.com:8200)" [ref=e288]
+          - textbox "Vault Token" [ref=e289]
+          - 'textbox "Mount Path (default: secret)" [ref=e290]': secret
+          - textbox "Namespace (optional)" [ref=e291]
+          - generic [ref=e292] [cursor=pointer]:
+            - checkbox "Migrate existing secrets when switching backends" [ref=e293]
+            - text: Migrate existing secrets when switching backends
+          - generic [ref=e294]:
+            - button "Test Connection" [disabled] [ref=e295] [cursor=pointer]
+            - button "Save & Connect" [disabled] [ref=e296] [cursor=pointer]
+        - button "Reset to Vault-Dev" [ref=e297] [cursor=pointer]
+      - generic [ref=e298]:
+        - generic [ref=e299]:
+          - heading "AI Providers" [level=3] [ref=e300]
+          - button "+ Add Provider" [ref=e301] [cursor=pointer]
+        - generic [ref=e303]:
+          - generic [ref=e304]:
+            - generic [ref=e305]:
+              - generic [ref=e306]: mock
+              - generic [ref=e307]: mock
+              - generic [ref=e308]: default
+            - generic [ref=e309]: active
+          - generic [ref=e311]:
+            - button "Test" [ref=e312] [cursor=pointer]
+            - button "Edit" [ref=e313] [cursor=pointer]
+            - button "Delete" [ref=e314] [cursor=pointer]
+      - generic [ref=e315]:
+        - heading "Connection" [level=3] [ref=e316]
+        - generic [ref=e317]:
+          - generic [ref=e318]: API Base
+          - generic [ref=e319]: localhost:9090
+        - generic [ref=e320]:
+          - generic [ref=e321]: UI Port
+          - generic [ref=e322]: localhost:5173 (dev)
+        - generic [ref=e323]:
+          - text: API requests are proxied to the Ratchet server. SSE events stream from
+          - code [ref=e324]: /events
+          - text: . Auth token is stored in
+          - code [ref=e325]: localStorage
+          - text: .
+      - generic [ref=e326]:
+        - generic [ref=e327]:
+          - heading "MCP Servers" [level=3] [ref=e328]
+          - button "+ Add Server" [ref=e330] [cursor=pointer]
+        - generic [ref=e331]: No MCP servers configured. MCP servers provide additional tools to agents — file access, database queries, web search, and more. Click "+ Add Server" to connect one.
+      - generic [ref=e332]:
+        - generic [ref=e333]:
+          - heading "Webhook Triggers" [level=3] [ref=e334]
+          - button "+ Add Webhook" [ref=e335] [cursor=pointer]
+        - generic [ref=e336]: No webhooks configured. Webhook triggers let external services (GitHub, Slack, or any HTTP client) automatically create tasks in Ratchet. Click "+ Add Webhook" to configure one.

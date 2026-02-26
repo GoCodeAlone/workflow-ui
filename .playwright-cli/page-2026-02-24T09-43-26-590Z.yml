@@ -1,0 +1,12 @@
+- generic [ref=e73]:
+  - generic [ref=e74]:
+    - heading "Ratchet" [level=1] [ref=e75]
+    - paragraph [ref=e76]: AI Agent Mission Control
+  - generic [ref=e77]:
+    - generic [ref=e78]:
+      - generic [ref=e79]: Username
+      - textbox "admin" [active] [ref=e80]
+    - generic [ref=e81]:
+      - generic [ref=e82]: Password
+      - textbox "••••••••" [ref=e83]
+    - button "Sign In" [ref=e84] [cursor=pointer]

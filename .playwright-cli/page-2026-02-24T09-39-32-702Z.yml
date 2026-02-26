@@ -1,0 +1,19 @@
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - heading "Welcome to Workflow Engine" [level=1] [ref=e6]
+    - paragraph [ref=e7]: Create your admin account to get started
+  - generic [ref=e22]: Password must be at least 6 characters
+  - generic [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]: Name
+      - textbox "Your name" [ref=e11]: Admin
+    - generic [ref=e12]:
+      - generic [ref=e13]: Email
+      - textbox "admin@example.com" [ref=e14]: admin@test.com
+    - generic [ref=e15]:
+      - generic [ref=e16]: Password
+      - textbox "Min 6 characters" [ref=e17]: short
+    - generic [ref=e18]:
+      - generic [ref=e19]: Confirm Password
+      - textbox "Confirm password" [ref=e20]: short
+    - button "Create Admin Account" [active] [ref=e21] [cursor=pointer]

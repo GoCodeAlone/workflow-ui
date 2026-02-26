@@ -1,0 +1,52 @@
+- generic [ref=e17]:
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - heading "Ratchet" [level=2] [ref=e20]
+      - paragraph [ref=e21]: AI Agent Platform
+    - navigation [ref=e22]:
+      - button "[D] Dashboard" [ref=e23] [cursor=pointer]:
+        - generic [ref=e24]: "[D]"
+        - text: Dashboard
+      - button "[A] Agents" [ref=e25] [cursor=pointer]:
+        - generic [ref=e26]: "[A]"
+        - text: Agents
+      - button "[T] Tasks" [active] [ref=e27] [cursor=pointer]:
+        - generic [ref=e28]: "[T]"
+        - text: Tasks
+      - button "[M] Messages" [ref=e29] [cursor=pointer]:
+        - generic [ref=e30]: "[M]"
+        - text: Messages
+      - button "[P] Projects" [ref=e31] [cursor=pointer]:
+        - generic [ref=e32]: "[P]"
+        - text: Projects
+      - button "[K] Skills" [ref=e33] [cursor=pointer]:
+        - generic [ref=e34]: "[K]"
+        - text: Skills
+      - button "[S] Settings" [ref=e35] [cursor=pointer]:
+        - generic [ref=e36]: "[S]"
+        - text: Settings
+    - generic [ref=e37]:
+      - generic [ref=e38]: admin
+      - button "Sign Out" [ref=e39] [cursor=pointer]
+  - generic [ref=e40]:
+    - heading "Tasks" [level=3] [ref=e217]
+    - generic [ref=e218]:
+      - generic [ref=e219]:
+        - textbox "Search tasks..." [ref=e220]
+        - combobox [ref=e221]:
+          - option "All statuses" [selected]
+          - option "pending"
+          - option "assigned"
+          - option "in progress"
+          - option "completed"
+          - option "failed"
+          - option "canceled"
+        - combobox [ref=e222]:
+          - option "All agents" [selected]
+          - option "Orchestrator"
+          - option "Developer"
+          - option "Reviewer"
+          - option "TestAgent"
+        - button "Apply" [ref=e223] [cursor=pointer]
+        - button "+ New Task" [ref=e224] [cursor=pointer]
+      - generic [ref=e225]: No tasks found.

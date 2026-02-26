@@ -1,0 +1,53 @@
+- generic [ref=e23]:
+  - generic [ref=e102]:
+    - button "◀" [ref=e103] [cursor=pointer]
+    - generic [ref=e105] [cursor=pointer]:
+      - generic [ref=e106]: Admin Configuration
+      - button "x" [ref=e107]
+    - button "▶" [ref=e108] [cursor=pointer]
+    - button "+" [ref=e109] [cursor=pointer]
+  - generic [ref=e24]:
+    - navigation "Main navigation" [ref=e25]:
+      - button "Dashboard" [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: 📊
+      - button "Editor" [ref=e28] [cursor=pointer]:
+        - generic [ref=e29]: 📝
+      - button "Marketplace" [ref=e30] [cursor=pointer]:
+        - generic [ref=e31]: 🛒
+      - button "Templates" [ref=e32] [cursor=pointer]:
+        - generic [ref=e33]: 📄
+      - button "Environments" [active] [ref=e34] [cursor=pointer]:
+        - generic [ref=e35]: ☁️
+      - button "Feature Flags" [ref=e36] [cursor=pointer]:
+        - generic [ref=e37]: flag
+      - button "Settings" [ref=e38] [cursor=pointer]:
+        - generic [ref=e39]: ⚙️
+      - generic [ref=e158]: WF
+      - button "Executions" [ref=e159] [cursor=pointer]:
+        - generic [ref=e160]: ▶️
+      - button "Logs" [ref=e161] [cursor=pointer]:
+        - generic [ref=e162]: 📃
+      - button "Events" [ref=e163] [cursor=pointer]:
+        - generic [ref=e164]: ⚡
+    - generic [ref=e7595]:
+      - generic [ref=e7596]:
+        - generic [ref=e7597]:
+          - heading "Environments" [level=2] [ref=e7598]
+          - paragraph [ref=e7599]: Manage deployment targets and cloud provider configurations.
+        - button "+ Create Environment" [ref=e7600] [cursor=pointer]
+      - generic [ref=e7601]:
+        - combobox [ref=e7602]:
+          - option "All Providers" [selected]
+          - option "AWS"
+          - option "Google Cloud"
+          - option "Azure"
+          - option "DigitalOcean"
+        - combobox [ref=e7603]:
+          - option "All Statuses" [selected]
+          - option "Active"
+          - option "Provisioning"
+          - option "Error"
+          - option "Decommissioned"
+        - button "Refresh" [ref=e7604] [cursor=pointer]
+        - generic [ref=e7605]: 0 environments
+      - generic [ref=e7606]: No environments yet. Create one to get started.

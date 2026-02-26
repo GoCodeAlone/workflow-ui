@@ -1,0 +1,6 @@
+[  143610ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8081/api/v1/admin/iam/providers/00000000-0000-0000-0000-000000000001:0
+[  189362ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8081/api/v1/admin/feature-flags/stream?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZXhwIjoxNzcyMDEyMzkzLCJpYXQiOjE3NzE5MjU5OTMsImlzcyI6IndvcmtmbG93LWFkbWluIiwibmFtZSI6IkFkbWluIiwicm9sZSI6ImFkbWluIiwic3ViIjoiMSJ9.SHPSwA8kI8aSOunbhv7i3S5IqwEs6-DRQE6BznIzBeQ:0
+[  266366ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8081/api/v1/admin/iam/providers/00000000-0000-0000-0000-000000000001:0
+[  348863ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://localhost:8081/api/v1/auth/login:0
+[86702049ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8081/api/v1/auth/refresh:0
+[86702092ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8081/api/v1/auth/logout:0

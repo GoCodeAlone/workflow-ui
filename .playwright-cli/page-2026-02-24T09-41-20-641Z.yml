@@ -1,0 +1,78 @@
+- generic [ref=e23]:
+  - generic [ref=e102]:
+    - button "◀" [ref=e103] [cursor=pointer]
+    - generic [ref=e105] [cursor=pointer]:
+      - generic [ref=e106]: Admin Configuration
+      - button "x" [ref=e107]
+    - button "▶" [ref=e108] [cursor=pointer]
+    - button "+" [ref=e109] [cursor=pointer]
+  - generic [ref=e24]:
+    - navigation "Main navigation" [ref=e25]:
+      - button "Dashboard" [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: 📊
+      - button "Editor" [ref=e28] [cursor=pointer]:
+        - generic [ref=e29]: 📝
+      - button "Marketplace" [ref=e30] [cursor=pointer]:
+        - generic [ref=e31]: 🛒
+      - button "Templates" [ref=e32] [cursor=pointer]:
+        - generic [ref=e33]: 📄
+      - button "Environments" [ref=e34] [cursor=pointer]:
+        - generic [ref=e35]: ☁️
+      - button "Feature Flags" [ref=e36] [cursor=pointer]:
+        - generic [ref=e37]: flag
+      - button "Settings" [active] [ref=e38] [cursor=pointer]:
+        - generic [ref=e39]: ⚙️
+      - generic [ref=e158]: WF
+      - button "Executions" [ref=e159] [cursor=pointer]:
+        - generic [ref=e160]: ▶️
+      - button "Logs" [ref=e161] [cursor=pointer]:
+        - generic [ref=e162]: 📃
+      - button "Events" [ref=e163] [cursor=pointer]:
+        - generic [ref=e164]: ⚡
+    - generic [ref=e7291]:
+      - generic [ref=e7293]:
+        - generic [ref=e7294]:
+          - heading "Users" [level=3] [ref=e7295]
+          - button "Add User" [ref=e7296] [cursor=pointer]
+        - generic [ref=e7297]:
+          - generic [ref=e7298]:
+            - generic [ref=e7299]: Email
+            - generic [ref=e7300]: Name
+            - generic [ref=e7301]: Role
+            - generic [ref=e7302]: Created
+            - generic [ref=e7303]: Actions
+          - generic [ref=e7305]:
+            - generic [ref=e7306]: admin@test.com
+            - generic [ref=e7307]: Admin
+            - combobox [ref=e7309]:
+              - option "user"
+              - option "admin" [selected]
+            - generic [ref=e7310]: 2/24/2026
+      - generic [ref=e7313]:
+        - heading "Secrets Providers" [level=3] [ref=e7315]
+        - paragraph [ref=e7316]:
+          - text: Configure external secrets providers. Secret references in module configs (e.g.
+          - code [ref=e7317]: "$${vault:secret/path#field}"
+          - text: or
+          - code [ref=e7318]: "$${aws-sm:my-secret}"
+          - text: ) will be resolved at startup.
+        - generic [ref=e7320]:
+          - checkbox [ref=e7321]
+          - generic [ref=e7322]: HashiCorp Vault
+        - generic [ref=e7324]:
+          - checkbox [ref=e7325]
+          - generic [ref=e7326]: AWS Secrets Manager
+        - button "Save Configuration" [ref=e7327] [cursor=pointer]
+      - generic [ref=e7329]:
+        - heading "IAM Settings" [level=2] [ref=e7330]
+        - combobox [ref=e7331]:
+          - option "Default Organization" [selected]
+          - option "System"
+        - button "Add Provider" [ref=e7332] [cursor=pointer]
+      - generic [ref=e7333]:
+        - generic [ref=e7334]:
+          - generic [ref=e7335]: Name
+          - generic [ref=e7336]: Type
+          - generic [ref=e7337]: Status
+          - generic [ref=e7338]: Actions
+        - generic [ref=e7339]: No IAM providers configured.
