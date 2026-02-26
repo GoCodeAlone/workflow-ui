@@ -1,12 +1,10 @@
 export { default as StatusBadge } from './StatusBadge';
 export type { StatusBadgeProps, StatusValue, StatusBadgeSize } from './StatusBadge';
 
-export { default as DataTable } from './DataTable';
+export { DataTable } from './DataTable';
 export type {
   DataTableProps,
   DataTableColumn,
-  SortState,
-  SortDirection,
 } from './DataTable';
 
 export { default as Modal } from './Modal';

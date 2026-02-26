@@ -57,7 +57,7 @@ describe('DataTable', () => {
     const data = makeRows(12);
     render(<DataTable columns={columns} data={data} pageSize={5} rowKey={(row) => String(row.id)} />);
 
-    await user.click(screen.getByRole('button', { name: 'Next' }));
+    await user.click(screen.getByRole('button', { name: 'Next page' }));
     expect(screen.getByText('Item 6')).toBeInTheDocument();
     expect(screen.queryByText('Item 1')).not.toBeInTheDocument();
     expect(screen.getByText('Page 2 of 3')).toBeInTheDocument();
@@ -68,8 +68,8 @@ describe('DataTable', () => {
     const data = makeRows(12);
     render(<DataTable columns={columns} data={data} pageSize={5} rowKey={(row) => String(row.id)} />);
 
-    await user.click(screen.getByRole('button', { name: 'Next' }));
-    await user.click(screen.getByRole('button', { name: 'Previous' }));
+    await user.click(screen.getByRole('button', { name: 'Next page' }));
+    await user.click(screen.getByRole('button', { name: 'Previous page' }));
     expect(screen.getByText('Item 1')).toBeInTheDocument();
     expect(screen.getByText('Page 1 of 3')).toBeInTheDocument();
   });
@@ -119,7 +119,7 @@ describe('DataTable', () => {
         rowKey={(row) => String(row.id)}
       />,
     );
-    await user.click(screen.getByRole('button', { name: 'Next' }));
+    await user.click(screen.getByRole('button', { name: 'Next page' }));
     expect(screen.getByText('Page 2 of 3')).toBeInTheDocument();
   });
 });
