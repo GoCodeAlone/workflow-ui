@@ -35,6 +35,11 @@
       "types": "./dist/components/index.d.ts",
       "import": "./dist/components/index.js",
       "require": "./dist/components/index.cjs"
+    },
+    "./trace": {
+      "types": "./dist/trace/index.d.ts",
+      "import": "./dist/trace/index.js",
+      "require": "./dist/trace/index.cjs"
     }
   },
   "files": [
@@ -47,6 +52,7 @@
     "lint": "eslint src/"
   },
   "peerDependencies": {
+    "@xyflow/react": "^12.0.0",
     "react": "^18.0.0 || ^19.0.0",
     "react-dom": "^18.0.0 || ^19.0.0",
     "zustand": "^4.0.0 || ^5.0.0"
@@ -59,6 +65,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
+    "@xyflow/react": "^12.10.1",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",

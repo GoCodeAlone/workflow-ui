@@ -13,11 +13,12 @@ export default defineConfig({
         'sse/index': resolve(__dirname, 'src/sse/index.ts'),
         'theme/index': resolve(__dirname, 'src/theme/index.ts'),
         'components/index': resolve(__dirname, 'src/components/index.ts'),
+        'trace/index': resolve(__dirname, 'src/trace/index.ts'),
       },
       formats: ['es', 'cjs'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'zustand'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', 'zustand', '@xyflow/react'],
     },
   },
   test: {
