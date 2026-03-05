@@ -30,3 +30,9 @@ export type { TraceCanvasProps } from './TraceCanvas';
 
 export { default as TraceNodeOverlay } from './TraceNodeOverlay';
 export type { TraceNodeOverlayProps } from './TraceNodeOverlay';
+
+export { default as ExecutionWaterfall } from './ExecutionWaterfall';
+export type { ExecutionWaterfallProps } from './ExecutionWaterfall';
+
+export { default as ExecutionLogViewer } from './ExecutionLogViewer';
+export type { ExecutionLogViewerProps, LogEntry, LogFilter } from './ExecutionLogViewer';
