@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 
 export interface LogEntry {
-  id: string;
+  id: number;
   level: 'debug' | 'info' | 'warn' | 'error';
   message: string;
   moduleName?: string;
@@ -29,7 +29,7 @@ function formatTime(iso: string): string {
 
 interface LogRowProps {
   entry: LogEntry;
-  onStepClick: (stepName: string) => void;
+  onStepClick?: (stepName: string) => void;
 }
 
 function LogRow({ entry, onStepClick }: LogRowProps) {
@@ -73,18 +73,18 @@ function LogRow({ entry, onStepClick }: LogRowProps) {
         </span>
         {entry.moduleName && (
           <button
-            onClick={() => onStepClick(entry.moduleName!)}
+            onClick={() => onStepClick?.(entry.moduleName!)}
             style={{
               background: '#313244',
               border: 'none',
               borderRadius: 3,
-              color: '#89b4fa',
+              color: onStepClick ? '#89b4fa' : '#6c7086',
               fontSize: 10,
-              cursor: 'pointer',
+              cursor: onStepClick ? 'pointer' : 'default',
               padding: '1px 5px',
               flexShrink: 0,
             }}
-            title="Click to highlight step"
+            title={onStepClick ? 'Click to highlight step' : undefined}
           >
             {entry.moduleName}
           </button>
@@ -136,7 +136,7 @@ export interface LogFilter {
 
 export interface ExecutionLogViewerProps {
   logs: LogEntry[];
-  onStepClick: (stepName: string) => void;
+  onStepClick?: (stepName: string) => void;
   filter?: LogFilter;
 }
 
