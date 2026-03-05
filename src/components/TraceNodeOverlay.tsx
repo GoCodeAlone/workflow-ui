@@ -1,6 +1,7 @@
-import type { CSSProperties } from 'react';
+import { useEffect, type CSSProperties } from 'react';
 import type { TraceStep } from '../trace/types';
 import { TRACE_STATUS_COLORS } from '../trace/types';
+import { formatDuration } from '../trace/utils';
 
 let pulseInjected = false;
 function ensurePulseKeyframes() {
@@ -24,13 +25,6 @@ const STATUS_ICONS: Record<TraceStep['status'], string> = {
   pending: '○',
 };
 
-function formatDuration(ms?: number): string {
-  if (ms == null) return '';
-  if (ms < 1000) return `${ms}ms`;
-  if (ms < 60000) return `${(ms / 1000).toFixed(1)}s`;
-  return `${(ms / 60000).toFixed(1)}m`;
-}
-
 export interface TraceNodeOverlayProps {
   step: TraceStep;
   style?: CSSProperties;
@@ -42,11 +36,14 @@ export interface TraceNodeOverlayProps {
  * Position this absolutely within a relative-positioned node container.
  */
 export default function TraceNodeOverlay({ step, style }: TraceNodeOverlayProps) {
-  ensurePulseKeyframes();
+  useEffect(() => {
+    ensurePulseKeyframes();
+  }, []);
 
   const color = TRACE_STATUS_COLORS[step.status];
   const isRunning = step.status === 'running';
-  const duration = formatDuration(step.durationMs);
+  // Only show duration when durationMs is actually provided
+  const duration = step.durationMs != null ? formatDuration(step.durationMs) : null;
   const icon = STATUS_ICONS[step.status];
 
   const containerStyle: CSSProperties = {

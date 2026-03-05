@@ -1,18 +1,12 @@
-import { type CSSProperties } from 'react';
+import { type CSSProperties, type ReactNode } from 'react';
 import type { TraceStep } from '../trace/types';
 import { TRACE_STATUS_COLORS } from '../trace/types';
+import { formatDuration } from '../trace/utils';
 import JsonTreeViewer from './JsonTreeViewer';
-
-function formatDuration(ms?: number): string {
-  if (ms == null) return '—';
-  if (ms < 1000) return `${ms}ms`;
-  if (ms < 60000) return `${(ms / 1000).toFixed(1)}s`;
-  return `${(ms / 60000).toFixed(1)}m`;
-}
 
 interface SectionProps {
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 function Section({ title, children }: SectionProps) {

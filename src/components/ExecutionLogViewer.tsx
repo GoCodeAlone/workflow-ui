@@ -73,7 +73,7 @@ function LogRow({ entry, onStepClick }: LogRowProps) {
         </span>
         {entry.moduleName && (
           <button
-            onClick={() => onStepClick?.(entry.moduleName!)}
+            onClick={() => entry.moduleName && onStepClick?.(entry.moduleName)}
             style={{
               background: '#313244',
               border: 'none',

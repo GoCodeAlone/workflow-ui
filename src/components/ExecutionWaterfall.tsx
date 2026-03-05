@@ -1,13 +1,7 @@
 import { useState, useMemo } from 'react';
 import type { TraceStep } from '../trace/types';
 import { TRACE_STATUS_COLORS } from '../trace/types';
-
-function formatDuration(ms?: number): string {
-  if (ms == null) return '—';
-  if (ms < 1000) return `${ms}ms`;
-  if (ms < 60000) return `${(ms / 1000).toFixed(2)}s`;
-  return `${(ms / 60000).toFixed(2)}m`;
-}
+import { formatDuration } from '../trace/utils';
 
 interface StepTiming {
   step: TraceStep;
@@ -47,15 +41,10 @@ function computeCriticalPath(timings: StepTiming[]): Set<string> {
 
   if (executed.length === 0) return new Set();
 
-  // For now all executed steps form the critical path (sequential model)
-  // In a parallel model you'd do longest-path DAG here
-  const criticalDuration = executed.reduce((sum, t) => sum + (t.step.durationMs ?? 0), 0);
-  if (criticalDuration === 0) {
-    // No timing data — just mark all executed steps
-    return new Set(executed.map((t) => t.step.stepName));
-  }
-
-  // Greedy: include all executed steps as critical path (sequential pipeline)
+  // Sequential model: all executed steps are treated as the critical path.
+  // In a sequential pipeline every executed step contributes to end-to-end latency.
+  // A parallel-branch DAG model (longest-path) would require explicit parent/child
+  // relationships in TraceStep, which are not currently part of the interface.
   return new Set(executed.map((t) => t.step.stepName));
 }
 
@@ -70,7 +59,7 @@ interface TooltipState {
 
 export interface ExecutionWaterfallProps {
   steps: TraceStep[];
-  onStepClick: (stepName: string) => void;
+  onStepClick?: (stepName: string) => void;
 }
 
 /** Horizontal waterfall chart showing step execution timing, colored by status, with critical path highlighted. */
@@ -107,7 +96,7 @@ export default function ExecutionWaterfall({ steps, onStepClick }: ExecutionWate
 
   const handleBarClick = (stepName: string) => {
     setSelectedStep(stepName);
-    onStepClick(stepName);
+    onStepClick?.(stepName);
   };
 
   const handleMouseEnter = (

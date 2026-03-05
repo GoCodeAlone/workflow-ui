@@ -157,6 +157,8 @@ export default function JsonTreeViewer({ data, label }: JsonTreeViewerProps) {
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
+    }).catch(() => {
+      // Clipboard access denied (permissions, non-HTTPS, no focus) — silent no-op
     });
   }, [data]);
 

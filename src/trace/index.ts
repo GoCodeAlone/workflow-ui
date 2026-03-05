@@ -1,5 +1,6 @@
 export type { TraceStep, TraceData } from './types';
 export { TRACE_STATUS_COLORS } from './types';
+export { formatDuration } from './utils';
 export { default as TraceCanvas, applyTraceOverlay, applyEdgeHighlighting } from '../components/TraceCanvas';
 export type { TraceCanvasProps } from '../components/TraceCanvas';
 export { default as TraceNodeOverlay } from '../components/TraceNodeOverlay';
