@@ -16,6 +16,14 @@ function ensurePulseKeyframes() {
   document.head.appendChild(style);
 }
 
+const STATUS_ICONS: Record<TraceStep['status'], string> = {
+  completed: '✓',
+  failed: '✗',
+  running: '●',
+  skipped: '⏭',
+  pending: '○',
+};
+
 function formatDuration(ms?: number): string {
   if (ms == null) return '';
   if (ms < 1000) return `${ms}ms`;
@@ -30,6 +38,7 @@ export interface TraceNodeOverlayProps {
 
 /**
  * Renders a status badge + duration overlay for a trace node.
+ * Shows per-status icon: ✓ completed, ✗ failed, ⏭ skipped, ● running, ○ pending.
  * Position this absolutely within a relative-positioned node container.
  */
 export default function TraceNodeOverlay({ step, style }: TraceNodeOverlayProps) {
@@ -38,6 +47,7 @@ export default function TraceNodeOverlay({ step, style }: TraceNodeOverlayProps)
   const color = TRACE_STATUS_COLORS[step.status];
   const isRunning = step.status === 'running';
   const duration = formatDuration(step.durationMs);
+  const icon = STATUS_ICONS[step.status];
 
   const containerStyle: CSSProperties = {
     position: 'absolute',
@@ -63,20 +73,11 @@ export default function TraceNodeOverlay({ step, style }: TraceNodeOverlayProps)
     ...(isRunning ? { animation: 'trace-overlay-pulse 1.4s ease-in-out infinite' } : {}),
   };
 
-  const dotStyle: CSSProperties = {
-    width: 6,
-    height: 6,
-    borderRadius: '50%',
-    background: color,
-    flexShrink: 0,
-  };
-
   return (
     <div style={containerStyle}>
-      <span style={badgeStyle}>
-        <span style={dotStyle} aria-hidden="true" />
-        {step.status}
-        {duration ? ` · ${duration}` : ''}
+      <span style={badgeStyle} aria-label={`${step.status}${duration ? ` ${duration}` : ''}`}>
+        <span aria-hidden="true">{icon}</span>
+        {duration ? ` ${duration}` : ''}
       </span>
     </div>
   );

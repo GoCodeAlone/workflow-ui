@@ -8,6 +8,7 @@ import {
   type Edge,
   type Node as RFNode,
   type NodeTypes,
+  type EdgeTypes,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import type { TraceData, TraceStep } from '../trace/types';
@@ -97,6 +98,7 @@ export interface TraceCanvasProps {
   traceData: TraceData;
   onStepClick?: (step: TraceStep) => void;
   nodeTypes?: NodeTypes;
+  edgeTypes?: EdgeTypes;
 }
 
 /**
@@ -109,6 +111,7 @@ export default function TraceCanvas({
   traceData,
   onStepClick,
   nodeTypes,
+  edgeTypes,
 }: TraceCanvasProps) {
   const overlaidNodes = useMemo(() => applyTraceOverlay(nodes, traceData), [nodes, traceData]);
   const highlightedEdges = useMemo(
@@ -135,6 +138,7 @@ export default function TraceCanvas({
       nodes={overlaidNodes}
       edges={highlightedEdges}
       nodeTypes={nodeTypes}
+      edgeTypes={edgeTypes}
       nodesDraggable={false}
       nodesConnectable={false}
       elementsSelectable={true}

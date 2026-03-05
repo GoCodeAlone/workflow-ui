@@ -171,6 +171,12 @@ export default function StepDetailPanel({ step, onClose, style }: StepDetailPane
         {/* Timing section */}
         <Section title="Timing">
           <InfoRow label="Sequence #" value={`#${step.sequenceNum}`} />
+          {step.startedAt && (
+            <InfoRow
+              label="Started at"
+              value={new Date(step.startedAt).toLocaleTimeString(undefined, { hour12: false })}
+            />
+          )}
           <InfoRow label="Duration" value={formatDuration(step.durationMs)} />
         </Section>
 
@@ -203,7 +209,7 @@ export default function StepDetailPanel({ step, onClose, style }: StepDetailPane
                 style={{
                   color: '#f38ba8',
                   fontSize: 12,
-                  margin: 0,
+                  margin: '0 0 6px',
                   fontFamily: 'monospace',
                   lineHeight: '18px',
                   wordBreak: 'break-word',
@@ -211,6 +217,26 @@ export default function StepDetailPanel({ step, onClose, style }: StepDetailPane
               >
                 {step.errorMessage}
               </p>
+              {step.stackTrace && (
+                <pre
+                  style={{
+                    margin: 0,
+                    padding: '6px 8px',
+                    background: '#0d1117',
+                    borderRadius: 4,
+                    color: '#f38ba8',
+                    fontSize: 10,
+                    fontFamily: 'monospace',
+                    lineHeight: '15px',
+                    overflow: 'auto',
+                    maxHeight: 160,
+                    wordBreak: 'break-all',
+                    whiteSpace: 'pre-wrap',
+                  }}
+                >
+                  {step.stackTrace}
+                </pre>
+              )}
             </div>
           </Section>
         )}

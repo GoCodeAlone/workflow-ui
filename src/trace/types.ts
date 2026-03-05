@@ -3,9 +3,11 @@ export interface TraceStep {
   stepType: string;
   status: 'pending' | 'running' | 'completed' | 'failed' | 'skipped';
   durationMs?: number;
+  startedAt?: string;
   inputData?: Record<string, unknown> | null;
   outputData?: Record<string, unknown> | null;
   errorMessage?: string;
+  stackTrace?: string;
   sequenceNum: number;
   /** For conditional steps: which route was taken */
   routeTaken?: string;
